@@ -82,13 +82,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             <a
               href="#hero"
               onClick={(e) => scrollToSection(e, '#hero')}
-              className="group flex items-center space-x-3 focus:outline-none py-1"
+              className="group flex items-center space-x-3 focus:outline-none py-0.5"
               aria-label="Almeyda Siracusa - Home"
             >
-              <div className="w-28 sm:w-36 md:w-40 transition-transform duration-300 group-hover:scale-105">
-                <AlmeydaLogo id="nav-brand-logo" className="w-full h-auto drop-shadow-md" glow={false} />
+              <div className="h-7 sm:h-8 md:h-9 w-auto max-w-[105px] sm:max-w-[125px] flex items-center transition-transform duration-300 group-hover:scale-105">
+                <AlmeydaLogo id="nav-brand-logo" className="h-full w-auto max-h-9 object-contain" glow={false} />
               </div>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase font-light text-white/50 hidden md:inline-block border-l border-white/15 pl-3">
+              <span className="text-[9px] sm:text-[10px] tracking-[0.28em] uppercase font-light text-white/50 hidden md:inline-block border-l border-white/15 pl-3 self-center">
                 {t.common.citySubtitle}
               </span>
             </a>
