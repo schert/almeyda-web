@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, MapPin, Clock, Globe } from 'lucide-react';
 import { businessConfig } from '../config/almeydaConfig';
 import { useTranslation } from '../context/LanguageContext';
+import { AlmeydaLogo } from './AlmeydaLogo';
 
 interface NavbarProps {
   onOpenReservation: () => void;
@@ -81,13 +82,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             <a
               href="#hero"
               onClick={(e) => scrollToSection(e, '#hero')}
-              className="group flex items-baseline space-x-3 focus:outline-none"
+              className="group flex items-center space-x-3 focus:outline-none py-1"
               aria-label="Almeyda Siracusa - Home"
             >
-              <span className="font-serif text-2xl md:text-3xl tracking-[0.18em] italic uppercase text-[#F5F2ED] group-hover:text-[#D4AF37] transition-colors duration-300">
-                Almeyda
-              </span>
-              <span className="text-[10px] tracking-[0.35em] uppercase font-light text-white/50 hidden sm:inline-block border-l border-white/15 pl-3">
+              <div className="w-28 sm:w-36 md:w-40 transition-transform duration-300 group-hover:scale-105">
+                <AlmeydaLogo id="nav-brand-logo" className="w-full h-auto drop-shadow-md" glow={false} />
+              </div>
+              <span className="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase font-light text-white/50 hidden md:inline-block border-l border-white/15 pl-3">
                 {t.common.citySubtitle}
               </span>
             </a>

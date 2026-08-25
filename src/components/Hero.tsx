@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useTranslation } from '../context/LanguageContext';
+import { AlmeydaLogo } from './AlmeydaLogo';
 
 interface HeroProps {
   onOpenReservation: () => void;
@@ -63,16 +64,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation, onOpenDiningMenu 
           {t.hero.badge}
         </motion.div>
 
-        {/* Grand Brand Name ALMEYDA */}
-        <motion.h1
-          id="hero-main-title"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.4 }}
-          className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[0.18em] italic uppercase text-[#F5F2ED] select-none my-2"
+        {/* Grand Brand Emblem / Logo */}
+        <motion.div
+          id="hero-main-logo"
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl px-2 sm:px-4 my-3 flex justify-center items-center"
         >
-          Almeyda
-        </motion.h1>
+          <h1 className="sr-only">Almeyda - Caffè del Teatro | Siracusa</h1>
+          <AlmeydaLogo className="w-full h-auto drop-shadow-2xl" glow={true} />
+        </motion.div>
 
         {/* Subtitle / Statement */}
         <motion.p
