@@ -5,15 +5,9 @@ import { useTranslation } from '../context/LanguageContext';
 
 interface FooterProps {
   onOpenReservation: () => void;
-  onOpenCocktailMenu: () => void;
-  onOpenDiningMenu: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({
-  onOpenReservation,
-  onOpenCocktailMenu,
-  onOpenDiningMenu
-}) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenReservation }) => {
   const { t } = useTranslation();
 
   const scrollToTop = () => {
@@ -22,7 +16,8 @@ export const Footer: React.FC<FooterProps> = ({
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const element = document.querySelector(href);
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
     if (element) {
       const navOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
@@ -34,12 +29,23 @@ export const Footer: React.FC<FooterProps> = ({
     }
   };
 
+  const navLinks = [
+    { label: t.navbar.home, href: '#home' },
+    { label: t.navbar.menu, href: '#menu' },
+    { label: t.navbar.cocktailBar, href: '#cocktail-bar' },
+    { label: t.navbar.caffetteria, href: '#caffetteria' },
+    { label: t.navbar.location, href: '#location' },
+    { label: t.navbar.experiences, href: '#experiences' },
+    { label: t.navbar.eventi, href: '#eventi' },
+    { label: t.navbar.contattaci, href: '#contattaci' }
+  ];
+
   return (
     <footer className="bg-[#07080A] text-[#F5F2ED] border-t border-white/10 pt-20 pb-12">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Main Footer Row */}
+        {/* Griglia Principale Footer */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/5">
-          {/* Brand Col */}
+          {/* Brand & Manifesto */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
               <div className="mb-4">
@@ -49,9 +55,12 @@ export const Footer: React.FC<FooterProps> = ({
                 <span className="text-[10px] tracking-[0.35em] uppercase text-[#D4AF37] font-bold">
                   {t.footer.tagline}
                 </span>
+                <span className="block text-white/40 text-[10px] tracking-[0.2em] uppercase mt-0.5">
+                  {t.footer.subTagline}
+                </span>
               </div>
 
-              <p className="text-xs sm:text-sm text-white/50 font-light leading-relaxed max-w-sm mt-4 font-sans">
+              <p className="text-xs sm:text-sm text-white/60 font-light leading-relaxed max-w-sm mt-4 font-sans">
                 {t.footer.description}
               </p>
             </div>
@@ -83,76 +92,27 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* 8 Sezioni */}
           <div className="lg:col-span-3">
             <span className="text-[10px] tracking-[0.25em] uppercase text-[#D4AF37] block font-bold mb-6">
-              {t.footer.exploreTitle}
+              {t.footer.sectionsTitle}
             </span>
-            <ul className="space-y-3 text-xs tracking-wider text-white/70 font-light">
-              <li>
-                <a
-                  href="#hero"
-                  onClick={(e) => scrollToSection(e, '#hero')}
-                  className="hover:text-[#D4AF37] transition-colors"
-                >
-                  {t.navbar.home}
-                </a>
-              </li>
-              <li>
-                <button
-                  onClick={onOpenCocktailMenu}
-                  className="hover:text-[#D4AF37] transition-colors text-left"
-                >
-                  {t.navbar.cocktail}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={onOpenDiningMenu}
-                  className="hover:text-[#D4AF37] transition-colors text-left"
-                >
-                  {t.navbar.dining}
-                </button>
-              </li>
-              <li>
-                <a
-                  href="#atmosfera"
-                  onClick={(e) => scrollToSection(e, '#atmosfera')}
-                  className="hover:text-[#D4AF37] transition-colors"
-                >
-                  {t.navbar.atmosphere}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#gallery"
-                  onClick={(e) => scrollToSection(e, '#gallery')}
-                  className="hover:text-[#D4AF37] transition-colors"
-                >
-                  {t.navbar.gallery}
-                </a>
-              </li>
-              <li>
-                <button
-                  onClick={onOpenReservation}
-                  className="text-[#D4AF37] hover:text-white font-medium transition-colors text-left"
-                >
-                  {t.navbar.book}
-                </button>
-              </li>
-              <li>
-                <a
-                  href="#siracusa"
-                  onClick={(e) => scrollToSection(e, '#siracusa')}
-                  className="hover:text-[#D4AF37] transition-colors"
-                >
-                  {t.navbar.siracusa}
-                </a>
-              </li>
+            <ul className="space-y-2.5 text-xs tracking-wider text-white/70 font-light">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => scrollToSection(e, link.href)}
+                    className="hover:text-[#D4AF37] transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Opening & Location details */}
+          {/* Dettagli Contatti & Orari */}
           <div className="lg:col-span-4">
             <span className="text-[10px] tracking-[0.25em] uppercase text-[#D4AF37] block font-bold mb-6">
               {t.footer.contactsTitle}
@@ -162,28 +122,35 @@ export const Footer: React.FC<FooterProps> = ({
                 <MapPin size={14} className="text-[#D4AF37] shrink-0 mt-0.5" />
                 <div>
                   <span className="text-[#F5F2ED]">{businessConfig.address}</span>
-                  <span className="block text-white/50">{businessConfig.city} — Sicilia</span>
+                  <span className="block text-white/50">{businessConfig.addressNote}</span>
                 </div>
               </div>
 
               <div className="flex items-center space-x-3">
                 <Phone size={14} className="text-[#D4AF37] shrink-0" />
-                <span className="font-mono">{businessConfig.phoneDisplay}</span>
+                <a href={`tel:${businessConfig.phone}`} className="font-mono hover:text-[#D4AF37] transition-colors">
+                  {businessConfig.phoneDisplay}
+                </a>
               </div>
 
               <div className="flex items-center space-x-3">
                 <Mail size={14} className="text-[#D4AF37] shrink-0" />
-                <span>{businessConfig.email}</span>
+                <a href={`mailto:${businessConfig.email}`} className="hover:text-[#D4AF37] transition-colors">
+                  {businessConfig.email}
+                </a>
               </div>
 
-              <div className="pt-2 text-[11px] text-white/50">
+              <div className="pt-2 text-[11px] text-white/50 border-t border-white/5">
+                <span className="text-[#D4AF37] block font-medium uppercase tracking-wider text-[10px] mb-1">
+                  {t.footer.hoursTitle}
+                </span>
                 {t.locationSection.openingHours[0]?.days}: {t.locationSection.openingHours[0]?.hours}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom copyright and back-to-top */}
+        {/* Copyright e torna su */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/40 font-light">
           <div>
             © {new Date().getFullYear()} ALMEYDA Siracusa. {t.footer.rights}

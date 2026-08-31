@@ -3,108 +3,80 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Intro } from './components/Intro';
+import { MenuSection } from './components/MenuSection';
 import { CocktailSection } from './components/CocktailSection';
-import { DiningSection } from './components/DiningSection';
-import { Atmosphere } from './components/Atmosphere';
-import { Experience } from './components/Experience';
-import { Gallery } from './components/Gallery';
-import { Reservation } from './components/Reservation';
-import { Location } from './components/Location';
+import { CafeteriaSection } from './components/CafeteriaSection';
+import { LocationSection } from './components/LocationSection';
+import { ExperiencesSection } from './components/ExperiencesSection';
+import { EventsSection } from './components/EventsSection';
+import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { CocktailMenuModal } from './components/CocktailMenuModal';
-import { DiningMenuModal } from './components/DiningMenuModal';
 
 function MainApp() {
-  const [cocktailMenuOpen, setCocktailMenuOpen] = useState(false);
-  const [diningMenuOpen, setDiningMenuOpen] = useState(false);
+  const handleScrollToContact = () => {
+    const contactSection = document.getElementById('contattaci');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-  const handleOpenReservation = () => {
-    const reservationSection = document.getElementById('prenotazione');
-    if (reservationSection) {
-      reservationSection.scrollIntoView({ behavior: 'smooth' });
+  const handleScrollToMenu = () => {
+    const menuSection = document.getElementById('menu');
+    if (menuSection) {
+      menuSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <div className="min-h-screen bg-[#0A0B0D] text-[#F5F2ED] selection:bg-[#D4AF37]/30 selection:text-[#F5F2ED] relative font-sans">
-      {/* Top Navbar */}
-      <Navbar
-        onOpenReservation={handleOpenReservation}
-        onOpenCocktailMenu={() => setCocktailMenuOpen(true)}
-        onOpenDiningMenu={() => setDiningMenuOpen(true)}
-      />
+      {/* Barra di Navigazione Superiore con le 8 voci richieste */}
+      <Navbar onOpenReservation={handleScrollToContact} />
 
       <main id="main-content">
-        {/* 1. Hero Section */}
+        {/* 1. Sezione Home */}
         <Hero
-          onOpenReservation={handleOpenReservation}
-          onOpenDiningMenu={() => setDiningMenuOpen(true)}
+          onOpenReservation={handleScrollToContact}
+          onOpenMenu={handleScrollToMenu}
         />
 
-        {/* 2. Intro Statement Section */}
-        <Intro />
+        {/* 2. Sezione Menù */}
+        <MenuSection
+          onOpenReservation={handleScrollToContact}
+        />
 
-        {/* 3. Cocktail Showcase Section */}
+        {/* 3. Sezione Cocktail Bar */}
         <CocktailSection
-          onOpenCocktailMenu={() => setCocktailMenuOpen(true)}
+          onOpenReservation={handleScrollToContact}
         />
 
-        {/* 4. Dining Cuisine Section */}
-        <DiningSection
-          onOpenDiningMenu={() => setDiningMenuOpen(true)}
+        {/* 4. Sezione Caffetteria */}
+        <CafeteriaSection
+          onOpenReservation={handleScrollToContact}
         />
 
-        {/* 5. Atmosphere Editorial Photography Section */}
-        <Atmosphere />
+        {/* 5. Sezione Location */}
+        <LocationSection />
 
-        {/* 6. Experience Three Pillars Section */}
-        <Experience
-          onOpenCocktailMenu={() => setCocktailMenuOpen(true)}
-          onOpenDiningMenu={() => setDiningMenuOpen(true)}
-          onOpenReservation={handleOpenReservation}
+        {/* 6. Sezione Experiences */}
+        <ExperiencesSection
+          onOpenReservation={handleScrollToContact}
         />
 
-        {/* 7. Gallery with Lightbox Section */}
-        <Gallery />
+        {/* 7. Sezione Eventi */}
+        <EventsSection
+          onOpenReservation={handleScrollToContact}
+        />
 
-        {/* 8. Reservation Section */}
-        <Reservation />
-
-        {/* 9. Siracusa Location & Contacts Section */}
-        <Location />
+        {/* 8. Sezione Contattaci */}
+        <ContactSection />
       </main>
 
-      {/* 10. Footer */}
-      <Footer
-        onOpenReservation={handleOpenReservation}
-        onOpenCocktailMenu={() => setCocktailMenuOpen(true)}
-        onOpenDiningMenu={() => setDiningMenuOpen(true)}
-      />
-
-      {/* Full Cocktail Menu Modal */}
-      <CocktailMenuModal
-        isOpen={cocktailMenuOpen}
-        onClose={() => setCocktailMenuOpen(false)}
-        onOpenReservation={() => {
-          setCocktailMenuOpen(false);
-          handleOpenReservation();
-        }}
-      />
-
-      {/* Full Dining Menu Modal */}
-      <DiningMenuModal
-        isOpen={diningMenuOpen}
-        onClose={() => setDiningMenuOpen(false)}
-        onOpenReservation={() => {
-          setDiningMenuOpen(false);
-          handleOpenReservation();
-        }}
-      />
+      {/* Footer */}
+      <Footer onOpenReservation={handleScrollToContact} />
     </div>
   );
 }

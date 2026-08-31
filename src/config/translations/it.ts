@@ -3,467 +3,446 @@ import { TranslationDictionary } from './types';
 export const itTranslations: TranslationDictionary = {
   common: {
     brandName: "ALMEYDA",
+    brandSubtitle: "Antico Bistrot Siciliano",
     city: "Siracusa",
-    citySubtitle: "Siracusa, IT",
+    citySubtitle: "Ortigia · Siracusa",
     bookTable: "PRENOTA UN TAVOLO",
-    explore: "Esplora",
+    explore: "Scopri di più",
     close: "Chiudi",
-    viewCocktailMenu: "CARTA COCKTAIL DIGITALE",
-    viewDiningMenu: "CARTA DINING DIGITALE",
+    viewMenu: "CARTA COMPLETA DEL MENÙ",
+    viewCocktailMenu: "LISTINO COCKTAIL",
+    viewCafeteriaMenu: "LISTINO CAFFETTERIA",
     ingredients: "Ingredienti",
     required: "obbligatorio"
   },
   navbar: {
-    home: "HOME",
-    cocktail: "COCKTAIL",
-    dining: "DINING",
-    atmosphere: "ATMOSFERA",
-    gallery: "GALLERY",
-    siracusa: "SIRACUSA",
+    home: "Home",
+    menu: "Menù",
+    cocktailBar: "Cocktail Bar",
+    caffetteria: "Caffetteria",
+    location: "Location",
+    experiences: "Experiences",
+    eventi: "Eventi",
+    contattaci: "Contattaci",
     book: "Prenota",
-    digitalCocktailMenu: "→ CARTA COCKTAIL DIGITALE",
-    digitalDiningMenu: "→ CARTA DINING DIGITALE",
-    openFrom: "Dalle 18:30",
-    openMenu: "Apri menu di navigazione",
-    closeMenu: "Chiudi menu"
+    openFrom: "Aperto tutti i giorni",
+    openMenu: "Apri navigazione",
+    closeMenu: "Chiudi navigazione"
   },
   hero: {
-    badge: "Cocktail · Dining · Siracusa",
-    headline: "Un luogo dove cocktail, cucina e atmosfera si incontrano.",
-    description: "Un ambiente contemporaneo e raffinato nel cuore di Siracusa. Dalla mixology d'autore alla cucina da condividere, per vivere la sera con il giusto ritmo.",
+    badge: "Antico Bistrot Siciliano · Teatro Comunale di Siracusa",
+    headline: "Un luogo sospeso nel tempo, dove il fascino della storia incontra il piacere dell’ospitalità.",
+    tributeTitle: "Omaggio a Giuseppe Damiani Almeyda (1834 - 1911)",
+    tributeParagraph1: "Abbiamo deciso di rendere omaggio ad uno dei più celebri rappresentanti del panorama architettonico in Sicilia tra la seconda metà dell’Ottocento ed i primi del Novecento, Giuseppe Damiani Almeyda (1834 - 1911).",
+    tributeParagraph2: "Varcare la soglia di Almeyda significa entrare in un luogo sospeso nel tempo, dove il fascino della storia incontra il piacere dell’ospitalità.",
+    tributeParagraph3: "Siete all’interno del Teatro Comunale di Siracusa, nel cuore autentico di Ortigia: uno spazio che custodisce memoria, arte e bellezza, e che oggi si apre a una nuova esperienza capace di coinvolgere e sorprendere tutti i cinque sensi.",
+    tributeParagraph4: "Luogo di incontro internazionale, atmosfera unica e sala eventi fanno di Almeyda un autentico Antico Bistrot Siciliano.",
+    tributeParagraph5: "Tutti i nostri prodotti sono homemade, siamo attenti alla stagione ed ai sapori autentici. Vini e oli ricercati, baguette calde e soprattutto amore e fantasia.",
     bookCta: "Prenota un Tavolo",
-    menuCta: "Scopri il Menu",
-    scrollHint: "Scorri per scoprire"
+    menuCta: "Scopri il Menù",
+    scrollHint: "Scorri per esplorare"
   },
-  intro: {
-    philosophyBadge: "Filosofia",
-    statementLine1: "Non è solo",
-    statementLine2: "una cena.",
-    description: "Almeyda è uno spazio pensato per vivere la sera con il giusto ritmo: dalla cucina ai cocktail, dall'aperitivo all'ultima conversazione."
-  },
-  cocktailSection: {
-    badge: "Mixology",
-    title: "Cocktail",
-    subtitle: "Classici, signature e nuove interpretazioni artigianali.",
-    viewMenuBtn: "Vedi la carta cocktail"
-  },
-  diningSection: {
-    badge: "Cucina Contemporanea",
-    title: "Dining",
-    subtitle: "Piatti pensati per essere condivisi e assaporati con calma.",
-    exploreMenuBtn: "Esplora il Menu",
-    featuredBadge: "In Evidenza",
+  menuSection: {
+    badge: "Sapori Autentici & Tradizione",
+    title: "Menù",
+    subtitle: "Prodotti freschi fatti in casa, attenti alla stagione e alla bontà siciliana.",
+    description: "Tutti i nostri prodotti sono preparati artigianalmente con passione quotidiana: taglieri ricercati, baguette calde fragranti, primi e secondi della memoria e dolci tradizionali accompagnati da una preziosa carta di oli e vini del territorio.",
+    exploreMenuBtn: "Visualizza il Menù",
+    featuredBadge: "Specialità della Casa",
     categories: {
-      antipasti: "Antipasti",
-      primi: "Primi",
-      secondi: "Secondi",
-      dessert: "Dessert"
-    }
-  },
-  atmosphereSection: {
-    badge: "Luci & Suoni",
-    title: "La Sera, Almeyda",
-    description: "Una luce calda, un drink d'autore, la cucina, la musica e il tempo per stare insieme.",
-    photos: [
+      all: "Tutte le Proposte",
+      baguette: "Baguette Calde & Sfizi",
+      antipasti: "Antipasti & Taglieri",
+      primi: "Primi della Tradizione",
+      secondi: "Secondi & Pescato",
+      dessert: "Dolci & Pasticceria",
+      viniOli: "Oli & Vini Ricercati"
+    },
+    dishes: [
       {
-        title: "Luce Calda & Bancone",
-        subtitle: "Mixology & Design"
+        id: "m-1",
+        name: "Baguette Calda Ortigia",
+        category: "baguette",
+        description: "Baguette artigianale appena sfornata con capocollo siciliano, stracciatella fresca, pomodorini confit e olio extravergine d'oliva dei Monti Iblei.",
+        price: "€ 11,00",
+        image: "https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1000&auto=format&fit=crop",
+        notes: "Preparazione artigianale · Servita calda",
+        featured: true
       },
       {
-        title: "Intimità dei Tavoli",
-        subtitle: "Dining & Convivialità"
+        id: "m-2",
+        name: "Baguette del Teatro",
+        category: "baguette",
+        description: "Baguette calda croccante con tonno rosso sott'olio fatto in casa, cipolla caramellata di Giarratana, capperi di Salina e scorzetta di limone siracusano.",
+        price: "€ 13,00",
+        image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=1000&auto=format&fit=crop",
+        notes: "Ricetta della casa",
+        featured: true
       },
       {
-        title: "Dettagli & Calici",
-        subtitle: "Selezione Vini & Spiriti"
+        id: "m-3",
+        name: "Tagliere dell'Antico Bistrot",
+        category: "antipasti",
+        description: "Selezione nobile di formaggi storici siciliani a latte crudo (Ragusano DOP, Piacentinu Ennese), salumi artigianali di maialino nero, confetture biologiche e pane caldo cotto a legna.",
+        price: "€ 22,00",
+        image: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=1000&auto=format&fit=crop",
+        notes: "Ideale per due persone",
+        featured: true
       },
       {
-        title: "La Cucina in Movimento",
-        subtitle: "Gusto & Creatività"
+        id: "m-4",
+        name: "Caponata Storica con Mandorle di Noto",
+        category: "antipasti",
+        description: "Melanzane dorate, sedano croccante, olive nocellara dell'Etna, pinoli e riduzione di aceto di vino e miele millefiori locale.",
+        price: "€ 12,00",
+        image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1000&auto=format&fit=crop",
+        notes: "Tradizione secolare",
+        featured: false
+      },
+      {
+        id: "m-5",
+        name: "Busiate di Grano Antico alla Siracusana",
+        category: "primi",
+        description: "Pasta fresca trafilata al bronzo con pomodoro datterino cotto a fuoco lento, acciughe di Sciacca, finocchietto selvatico e mollica atturrata tostate.",
+        price: "€ 16,00",
+        image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=1000&auto=format&fit=crop",
+        notes: "Grani antichi siciliani",
+        featured: true
+      },
+      {
+        id: "m-6",
+        name: "Tortelli di Ricotta e Zafferano",
+        category: "primi",
+        description: "Pasta fatta a mano ripiena di ricotta fresca di pecora iblea, burro aromatizzato alle erbe officinali e zafferano siciliano.",
+        price: "€ 17,00",
+        image: "https://images.unsplash.com/photo-1587740908075-9e245070dfaa?q=80&w=1000&auto=format&fit=crop",
+        notes: "Pasta fresca all'uovo",
+        featured: false
+      },
+      {
+        id: "m-7",
+        name: "Pescato del Giorno all'Acqua Pazza",
+        category: "secondi",
+        description: "Filetto di pesce fresco dal porto di Siracusa, cotti in brodetto profumato di pomodorini di Pachino, aglio rosso di Nubia e basilico fresco.",
+        price: "€ 24,00",
+        image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=1000&auto=format&fit=crop",
+        notes: "Pescato sostenibile locale",
+        featured: true
+      },
+      {
+        id: "m-8",
+        name: "Cannolo Scomposto con Ricotta Iblea",
+        category: "dessert",
+        description: "Cialda croccante alla cannella fritta a mano, crema vellutata di ricotta dolce di pecora, gocce di cioccolato di Modica e pistacchio di Bronte.",
+        price: "€ 8,00",
+        image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1000&auto=format&fit=crop",
+        notes: "Fatto al momento",
+        featured: true
+      },
+      {
+        id: "m-9",
+        name: "Selezione di Oli & Vini d'Autore",
+        category: "viniOli",
+        description: "Percorso di degustazione con tre eccellenze olearie monocultivar (Tonda Iblea, Nocellara, Biancolilla) e calici di vini vulcanici dell'Etna e Val di Noto.",
+        price: "€ 18,00",
+        image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1000&auto=format&fit=crop",
+        notes: "Etichette biologiche e naturali",
+        featured: true
       }
     ]
   },
-  experienceSection: {
-    exploreBtn: "Esplora",
-    pillars: [
+  cocktailSection: {
+    badge: "Miscelazione d'Autore & Spiriti Rari",
+    title: "Cocktail Bar",
+    subtitle: "Creazioni d'ispirazione Liberty, botaniche isolane e grandi pietre miliari.",
+    description: "Il nostro bancone celebra l'arte della miscelazione in una cornice senza tempo. Dalle ricette d'epoca rivisitate con agrumi e infusi della macchia mediterranea fino ai grandi classici internazionali preparati a regola d'arte.",
+    viewMenuBtn: "Consulta la Carta Cocktail",
+    categories: {
+      all: "Tutti i Cocktail",
+      signature: "Creazioni Esclusive",
+      classici: "Grandi Classici",
+      analcolici: "Analcolici della Casa"
+    },
+    cocktails: [
       {
-        title: "COCKTAIL",
-        subtitle: "Mixology d'autore",
-        description: "Signature cocktail e grandi classici reinterpretati con distillati rari, botaniche locali e sciroppi artigianali.",
+        id: "c-1",
+        name: "Almeyda 1834",
+        category: "signature",
+        description: "Un tributo aromatico con note d'arancia amara siciliana, vermouth rosso antico, distillato d'agave e profumo di rosmarino dell'Anapo affumicato.",
+        ingredients: ["Distillato d'Agave", "Vermouth Rosso Siciliano", "Liquore all'Arancia Amara", "Rosmarino Affumicato"],
+        price: "€ 14,00",
+        image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1000&auto=format&fit=crop",
+        profile: "Complesso · Speziato · Agrumato",
+        featured: true
+      },
+      {
+        id: "c-2",
+        name: "Notte ad Ortigia",
+        category: "signature",
+        description: "Gin artigianale all'alloro e ginepro dell'Etna, liquore ai fiori di zagara, cordiale al limone di Siracusa e tonica mediterranea.",
+        ingredients: ["Gin Etneo", "Elisir di Zagara", "Limone Femminello", "Tonica Mediterranea"],
+        price: "€ 13,00",
+        image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1000&auto=format&fit=crop",
+        profile: "Fresco · Floreale · Balsamico",
+        featured: true
+      },
+      {
+        id: "c-3",
+        name: "Il Palco Reale",
+        category: "signature",
+        description: "Bourbon invecchiato, amaro artigianale all'arancia rossa, gocce di bitter al cioccolato fondente di Modica e velluto di mandorla tostata.",
+        ingredients: ["Bourbon Reserve", "Amaro Siciliano", "Bitter al Cioccolato Modicano", "Olio Essenziale d'Arancia"],
+        price: "€ 15,00",
+        image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1000&auto=format&fit=crop",
+        profile: "Intenso · Avvolgente · Dorato",
+        featured: true
+      },
+      {
+        id: "c-4",
+        name: "Negroni dell'Antico Bistrot",
+        category: "classici",
+        description: "La nostra interpretazione del Negroni classico con bitter rosso infuso alla carruba siracusana, vermouth ambrato e gin alle erbe.",
+        ingredients: ["Gin alle Botaniche", "Bitter Artigianale alla Carruba", "Vermouth Riserva"],
+        price: "€ 12,00",
+        image: "https://images.unsplash.com/photo-1556881286-fc6915169721?q=80&w=1000&auto=format&fit=crop",
+        profile: "Amaricato · Intramontabile · Deciso",
+        featured: false
+      },
+      {
+        id: "c-5",
+        name: "Zagara & Melograno 0%",
+        category: "analcolici",
+        description: "Distillato analcolico alle erbe aromatiche, spremuta di melograno fresco, succo di mandarino tardivo e soda al basilico.",
+        ingredients: ["Botaniche Analcoliche", "Melograno Fresco", "Mandarino Tardivo", "Soda al Basilico"],
+        price: "€ 10,00",
+        image: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?q=80&w=1000&auto=format&fit=crop",
+        profile: "Fruttato · Rinfrescante · Vellutato",
+        featured: false
+      }
+    ]
+  },
+  caffetteriaSection: {
+    badge: "Il Salotto del Teatro",
+    title: "Caffetteria",
+    subtitle: "Miscele ricercate, colazioni tradizionali e momenti di pausa all'interno del Teatro.",
+    description: "Il profumo del caffè appena macinato accoglie gli ospiti fin dal mattino: selezioni 100% arabica, lievitati artigianali da forno, tisane biologiche in foglie e cioccolate calde speziate servite nella splendida cornice del Teatro Comunale.",
+    categories: {
+      all: "Tutte le Selezioni",
+      caffe: "Caffè & Specialità",
+      pasticceria: "Lievitati & Dolci",
+      infusi: "Tè, Tisane & Granite"
+    },
+    items: [
+      {
+        title: "Espresso del Teatro",
+        category: "caffe",
+        description: "Miscela monorigine tostata a legna con note di mandorla tostata e cacao amaro.",
+        price: "€ 1,80",
+        tag: "Miscela Esclusiva"
+      },
+      {
+        title: "Cappuccino alla Crema di Mandorla",
+        category: "caffe",
+        description: "Latte montato a regola d'arte con latte di mandorla d'Avola biologica e polvere di cacao.",
+        price: "€ 3,50",
+        tag: "Specialità"
+      },
+      {
+        title: "Cornetto Tradizionale & Fagottini",
+        category: "pasticceria",
+        description: "Sfoglia fragrante al burro con ripieno di crema alla vaniglia di Sicilia o pistacchio puro.",
+        price: "€ 2,50",
+        tag: "Fatto in Casa"
+      },
+      {
+        title: "Tè in Foglie & Infusi Botanici",
+        category: "infusi",
+        description: "Selezione di foglie intere di tè verde, nero affumicato, karkadè e tisane ai fiori di zagara.",
+        price: "€ 5,00",
+        tag: "Selezione Pregiata"
+      },
+      {
+        title: "Granita Tradizionale Siciliana (in stagione)",
+        category: "infusi",
+        description: "Granita artigianale alla mandorla pizzuta, limone di Siracusa o caffè con panna montata.",
+        price: "€ 4,50",
+        tag: "Tradizione Pura"
+      },
+      {
+        title: "Cioccolata Calda di Modica in Tazza",
+        category: "pasticceria",
+        description: "Pura cioccolata artigianale servita densa con cannella o peperoncino.",
+        price: "€ 5,50",
+        tag: "Invernale"
+      }
+    ],
+    highlights: [
+      {
+        title: "Colazione nel Foyer",
+        description: "Inizia la giornata circondato da marmi storici, dettagli Liberty e luce naturale.",
+        iconName: "Sun"
+      },
+      {
+        title: "Pasticceria Artigianale",
+        description: "Dolci sfornati quotidianamente seguendo ricette storiche siciliane.",
+        iconName: "Coffee"
+      },
+      {
+        title: "Pausa Pomeridiana",
+        description: "Un momento di relax con tè ricercati, libri d'arte e atmosfera tranquilla.",
+        iconName: "Feather"
+      }
+    ]
+  },
+  locationSection: {
+    badge: "Nel Cuore di Ortigia",
+    title: "Location",
+    subtitle: "All'interno del magnifico Teatro Comunale di Siracusa.",
+    description: "Varcare la soglia di Almeyda significa entrare in uno spazio monumentale che custodisce memoria, arte e bellezza. L'edificio, progettato e decorato sotto la guida dei grandi maestri dell'Ottocento, è la cornice ideale per un antico bistrot d'eccellenza.",
+    theatreTitle: "Il Teatro Comunale di Siracusa",
+    theatreDescription: "Inaugurato alla fine dell'Ottocento nel cuore di Ortigia, il Teatro è un capolavoro di architettura e decorazione. Almeyda vive in armonia con questi ambienti storici, offrendo una sala interna d'epoca e un elegante spazio all'aperto.",
+    addressTitle: "Indirizzo & Come Raggiungerci",
+    hoursTitle: "Orari di Accoglienza",
+    directionsBtn: "Indicazioni Stradali su Mappa",
+    openingHours: [
+      { days: "Mercoledì — Domenica", hours: "10:00 — 15:00 | 18:30 — 00:30", note: "Caffetteria, Pranzo, Aperitivo & Cocktail Bar" },
+      { days: "Lunedì", hours: "12:00 — 15:00 | 19:00 — 23:30", note: "Pranzo, Aperitivo & Dining" },
+      { days: "Martedì", hours: "Chiuso", note: "Giorno di riposo settimanale" }
+    ],
+    gallery: [
+      {
+        title: "La Facciata Storica",
+        caption: "Il Teatro Comunale di Siracusa, gioiello architettonico di Ortigia.",
+        imageUrl: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "La Sala dell'Antico Bistrot",
+        caption: "Arredi curati, luci dorate e soffitti d'epoca in una dimensione intima.",
+        imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Il Bancone della Miscelazione",
+        caption: "L'angolo dedicato alla mixology e alle selezioni di spiriti rari.",
+        imageUrl: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Dehors in Ortigia",
+        caption: "I tavoli esterni tra la pietra bianca di Siracusa e la brezza marina.",
+        imageUrl: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop"
+      }
+    ]
+  },
+  experiencesSection: {
+    badge: "Coinvolgere Tutti i Cinque Sensi",
+    title: "Experiences",
+    subtitle: "Percorsi gastronomici, sensoriali e culturali creati su misura.",
+    description: "Ogni esperienza da Almeyda è pensata per far scoprire l'anima profonda della Sicilia: dall'olio extravergine d'oliva d'eccellenza alla degustazione dei vini, fino alle lezioni private di miscelazione.",
+    bookBtn: "Richiedi Esperienza",
+    items: [
+      {
+        title: "Viaggio tra Oli & Vini Ricercati",
+        subtitle: "Degustazione Guidata dei Terroir Siciliani",
+        description: "Un percorso sensoriale con assaggio guidato di tre oli extravergini monocultivar e quattro vini etnei e siracusani, abbinati a baguette calde e formaggi storici.",
+        duration: "Circa 90 minuti",
+        tag: "Sensoriale",
         iconName: "Wine"
       },
       {
-        title: "DINING",
-        subtitle: "Cucina contemporanea",
-        description: "Una cucina pensata per accompagnare la serata, con piatti d'ispirazione mediterranea da condividere e assaporare con calma.",
-        iconName: "Utensils"
-      },
-      {
-        title: "ATMOSPHERE",
-        subtitle: "Tempo & Convivialità",
-        description: "Un ambiente elegante dove fermarsi più a lungo, immersi in luci soffuse, design essenziale e selezione musicale curata.",
+        title: "L'Aperitivo del Teatro",
+        subtitle: "Cocktail d'Autore & Sfizi dello Chef",
+        description: "Due signature drink a scelta accompagnati dal tagliere dell'Antico Bistrot con calde baguette fragranti e assaggi tipici della tradizione siciliana.",
+        duration: "Al tramonto o in prima serata",
+        tag: "Conviviale",
         iconName: "Sparkles"
+      },
+      {
+        title: "Cena Sensoriale a Cinque Sensi",
+        subtitle: "Menù Degustazione tra Storia e Cucina",
+        description: "Percorso gastronomico di cinque portate con narrazione della storia del Teatro e di Giuseppe Damiani Almeyda, in abbinamento a calici di vino selezionati.",
+        duration: "Cena completa",
+        tag: "Esclusivo",
+        iconName: "Utensils"
       }
     ]
   },
-  gallerySection: {
-    badge: "Racconto Visivo",
-    title: "Gallery",
-    subtitle: "Istantanee di mixology, cucina, riflessi e dettagli serali.",
-    clickToEnlarge: "Clicca per ingrandire",
-    modalTitle: "ALMEYDA GALLERY",
-    items: [
+  eventiSection: {
+    badge: "Momenti Unici al Teatro",
+    title: "Eventi",
+    subtitle: "La sala eventi e gli spazi storici a disposizione per le tue occasioni speciali.",
+    description: "Luogo di incontro internazionale, atmosfera unica e sala eventi fanno di Almeyda una cornice prestigiosa per ricevimenti privati, serate musicali dal vivo, incontri culturali, mostre e presentazioni aziendali.",
+    ctaBtn: "Richiedi Disponibilità Sala",
+    salaEventiTitle: "La Sala Eventi Privata",
+    salaEventiDescription: "Uno spazio suggestivo con acustica d'eccezione, illuminazione architettonica regolabile, servizio catering dedicato e bancone bar privato per accogliere i tuoi ospiti con la massima riservatezza e stile.",
+    eventTypes: [
       {
-        id: "gal-1",
-        title: "Il Bancone Mixology",
-        category: "Cocktail Bar",
-        imageUrl: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1200&auto=format&fit=crop",
-        aspect: "landscape",
-        caption: "La postazione cocktail: marmo scuro, bottiglie selezionate e luce soffusa."
+        title: "Ricevimenti & Feste Private",
+        description: "Compleanni eleganti, anniversari e celebrazioni con menù personalizzato e cocktail list dedicata.",
+        iconName: "PartyPopper"
       },
       {
-        id: "gal-2",
-        title: "Signature Pouring",
-        category: "Mixology",
-        imageUrl: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1000&auto=format&fit=crop",
-        aspect: "portrait",
-        caption: "Cura meticolosa in ogni dosaggio, essenza e guarnizione."
+        title: "Serate Musicali & Performance",
+        description: "Concerti jazz dal vivo, musica d'atmosfera acustica e appuntamenti artistici all'interno del Teatro.",
+        iconName: "Music"
       },
       {
-        id: "gal-3",
-        title: "Tavoli & Atmosfera Serale",
-        category: "Ambiente",
-        imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
-        aspect: "landscape",
-        caption: "Intimità contemporanea, tavoli a lume di candela e dettagli in ottone."
+        title: "Incontri Aziendali & Presentazioni",
+        description: "Spazio attrezzato per riunioni esclusive, presentazioni di prodotto, degustazioni stampa e conferenze.",
+        iconName: "Users"
       },
       {
-        id: "gal-4",
-        title: "Dettaglio Dining Contemporaneo",
-        category: "Cucina",
-        imageUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
-        aspect: "portrait",
-        caption: "Piatti disegnati per valorizzare la materia prima mediterranea."
-      },
-      {
-        id: "gal-5",
-        title: "Bicchieri & Riflessi d'Oro",
-        category: "Dettagli",
-        imageUrl: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop",
-        aspect: "landscape",
-        caption: "Riflessi caldi e trasparenze che accompagnano le conversazioni serali."
-      },
-      {
-        id: "gal-6",
-        title: "Scena Notturna Siracusana",
-        category: "Siracusa",
-        imageUrl: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1000&auto=format&fit=crop",
-        aspect: "portrait",
-        caption: "La magia della pietra chiara e della notte nella città di Siracusa."
+        title: "Vernissage & Mostre d'Arte",
+        description: "Esposizioni temporanee di pittura, scultura e fotografia in dialogo con l'architettura storica.",
+        iconName: "Palette"
       }
     ]
   },
-  reservationSection: {
-    badge: "Accoglienza & Esperienza",
-    title: "Prenota il Tuo Tavolo",
-    subtitle: "Consigliamo la prenotazione per garantire la migliore sistemazione e vivere l'esperienza Almeyda con la dovuta calma.",
+  contattaciSection: {
+    badge: "Siamo a Tua Disposizione",
+    title: "Contattaci",
+    subtitle: "Prenota il tuo tavolo o richiedi informazioni per il tuo evento.",
+    addressLabel: "Indirizzo",
+    phoneLabel: "Telefono",
+    whatsappLabel: "WhatsApp Diretto",
+    emailLabel: "Posta Elettronica",
+    hoursLabel: "Orario Continuato",
     form: {
-      experienceTypeLabel: "Tipo di Esperienza",
-      experienceTypes: {
-        aperitivo: {
-          title: "Aperitivo",
-          desc: "Cocktail & assaggi dello Chef"
-        },
-        cena: {
-          title: "Cena & Dining",
-          desc: "Percorso gastronomico completo"
-        },
-        dopocena: {
-          title: "After Dinner",
-          desc: "Mixology & atmosfera notturna"
-        }
-      },
-      areaLabel: "Area Preferita",
-      areas: {
-        cocktail_bar: "Cocktail Bar & Bancone",
-        dining_room: "Sala Interna Intima",
-        dehors: "Dehors Estivo"
+      title: "Invia una Richiesta",
+      subtitle: "Compila il modulo sottostante, il nostro personale ti risponderà con tempestività.",
+      nameLabel: "Nome e Cognome",
+      namePlaceholder: "Mario Rossi",
+      phoneLabel: "Numero di Telefono",
+      phonePlaceholder: "+39 333 1234567",
+      emailLabel: "Indirizzo Email",
+      emailPlaceholder: "mario.rossi@email.it",
+      subjectLabel: "Oggetto della Richiesta",
+      subjectOptions: {
+        tavolo: "Prenotazione Tavolo (Pranzo / Cena / Drink)",
+        evento: "Organizzazione Evento Privato",
+        informazioni: "Richiesta Informazioni Generali"
       },
       dateLabel: "Data Desiderata",
-      timeLabel: "Orario",
-      guestsLabel: "Numero Ospiti",
-      guestsOption: "Ospiti",
-      nameLabel: "Nome & Cognome",
-      namePlaceholder: "Mario Rossi",
-      phoneLabel: "Recapito Telefonico",
-      phonePlaceholder: "+39 333 1234567",
-      emailLabel: "Email di Contatto",
-      emailPlaceholder: "mario.rossi@email.com",
-      notesLabel: "Intolleranze, Allergie o Note Speciali",
-      notesPlaceholder: "Es. tavolo tranquillo, intolleranza al lattosio...",
-      submitBtn: "Conferma Prenotazione"
+      timeLabel: "Orario Indicativo",
+      guestsLabel: "Numero di Persone",
+      messageLabel: "Messaggio o Richieste Particolari",
+      messagePlaceholder: "Segnala eventuali intolleranze, preferenze di tavolo o dettagli dell'evento...",
+      submitBtn: "Invia Richiesta"
     },
     confirmation: {
-      badge: "Richiesta Ricevuta",
-      title: "Grazie, Gentile Ospite.",
-      greeting: "Abbiamo ricevuto la tua richiesta di prenotazione per",
-      summaryNote: "Verificheremo la disponibilità del tavolo e ti invieremo una conferma al recapito indicato a breve.",
-      fastTrackBadge: "Richiesta Immediata WhatsApp",
-      whatsappBtn: "Invia Dettagli su WhatsApp",
-      callBtn: "Chiama il Locale",
-      newRequestBtn: "Nuova Richiesta"
+      title: "Richiesta Inviata con Successo",
+      message: "Grazie. Abbiamo registrato la tua richiesta. Ti ricontatteremo a breve per confermare la disponibilità.",
+      whatsappBtn: "Scrivici su WhatsApp per Risposta Immediata",
+      callBtn: "Chiama Direttamente",
+      newRequestBtn: "Invia un'Altra Richiesta"
     }
-  },
-  locationSection: {
-    badge: "La Nostra Posizione",
-    title: "Siracusa",
-    subtitle: "Nel cuore pulsante della serata siracusana.",
-    addressTitle: "Indirizzo & Contatti",
-    hoursTitle: "Orari di Apertura",
-    directionsBtn: "Apri Indicazioni su Google Maps",
-    openingHours: [
-      { days: "Martedì — Giovedì", hours: "18:30 — 01:30", note: "Aperitivo, Dining & After Dinner" },
-      { days: "Venerdì — Sabato", hours: "18:30 — 02:30", note: "Aperitivo, Dining & Cocktail Bar" },
-      { days: "Domenica", hours: "18:30 — 01:30", note: "Aperitivo & Dining serale" },
-      { days: "Lunedì", hours: "Chiuso", note: "Giorno di riposo" }
-    ]
   },
   footer: {
-    tagline: "Cocktail · Dining · Siracusa",
-    description: "Uno spazio d'atmosfera nel cuore di Siracusa dove la cultura della mixology e la cucina d'autore si uniscono in una serata su misura.",
-    exploreTitle: "Esplora",
-    contactsTitle: "Contatti",
-    hoursTitle: "Orari",
-    rights: "Tutti i diritti riservati. Progetto per Almeyda Siracusa.",
+    tagline: "Antico Bistrot Siciliano",
+    subTagline: "Teatro Comunale di Siracusa · Ortigia",
+    description: "Un omaggio a Giuseppe Damiani Almeyda: storia, arte, sapori autentici, calde baguette e miscelazione d'autore nel cuore di Siracusa.",
+    sectionsTitle: "Sezioni",
+    contactsTitle: "Contatti & Recapiti",
+    hoursTitle: "Orari di Apertura",
+    rights: "Tutti i diritti riservati. Almeyda — Antico Bistrot Siciliano.",
     backToTop: "Torna in Cima"
-  },
-  cocktailModal: {
-    badge: "Almeyda Siracusa · Carta Bar",
-    title: "Carta Cocktail & Mixology",
-    searchPlaceholder: "Cerca cocktail, distillati o ingredienti...",
-    filters: {
-      all: "Tutti",
-      signature: "Signature",
-      classic: "Classici",
-      twist: "Twist",
-      mocktail: "0% Alcol"
-    },
-    noResults: "Nessun cocktail trovato per la ricerca.",
-    bookTable: "Prenota per Degustare"
-  },
-  diningModal: {
-    badge: "Almeyda Siracusa · Cucina",
-    title: "Carta Dining & Piatti",
-    filters: {
-      all: "Tutto il Menu",
-      antipasti: "Antipasti",
-      primi: "Primi Piatti",
-      secondi: "Secondi Piatti",
-      dessert: "Dessert"
-    },
-    noResults: "Nessun piatto trovato in questa categoria.",
-    bookTable: "Prenota il Tuo Tavolo"
-  },
-  cocktails: [
-    {
-      id: "sig-negroni",
-      name: "SIGNATURE NEGRONI",
-      category: "signature",
-      description: "Gin all'infuso di timo selvatico, vermouth rosso riserva, bitter italiano artigianale, fumo di legno d'ulivo.",
-      ingredients: ["Gin Botanico", "Vermouth Rosso Riserva", "Bitter Artigianale", "Scorza d'arancia amara"],
-      price: "€ 12",
-      profile: "Complesso & Aromatico",
-      image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=800&auto=format&fit=crop",
-      featured: true
-    },
-    {
-      id: "almeyda-sour",
-      name: "ALMEYDA SOUR",
-      category: "signature",
-      description: "Bourbon affinato, riduzione di agrumi di Sicilia, zucchero di canna integrale, albume e aromatic bitters.",
-      ingredients: ["Bourbon Whiskey", "Agrumi di Sicilia", "Zucchero grezzo", "Aromatic Bitters"],
-      price: "€ 13",
-      profile: "Vellutato & Agrumato",
-      image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop",
-      featured: true
-    },
-    {
-      id: "paloma",
-      name: "PALOMA SIRACUSANO",
-      category: "twist",
-      description: "Tequila 100% Agave, cordiale al pompelmo rosa chiarificato, succo di lime fresco e soda salina all'origano.",
-      ingredients: ["Tequila Blanco", "Pompelmo rosa", "Lime fresco", "Soda salina"],
-      price: "€ 12",
-      profile: "Fresco & Minerale",
-      image: "https://images.unsplash.com/photo-1536935338788-846bb9981813?q=80&w=800&auto=format&fit=crop",
-      featured: true
-    },
-    {
-      id: "espresso-martini",
-      name: "ESPRESSO MARTINI NOIR",
-      category: "classic",
-      description: "Vodka premium, estrazione a freddo di caffè tostato a legna, liquore al caffè artigianale e grattugiata di fava tonka.",
-      ingredients: ["Vodka Premium", "Cold Brew Coffee", "Kahlúa artigianale", "Fava Tonka"],
-      price: "€ 12",
-      profile: "Intenso & Avvolgente",
-      image: "https://images.unsplash.com/photo-1545438102-799c3991ffb2?q=80&w=800&auto=format&fit=crop",
-      featured: true
-    },
-    {
-      id: "sicilian-boulevardier",
-      name: "ETNA BOULEVARDIER",
-      category: "twist",
-      description: "Rye whiskey, amaro siciliano d'erbe, vermouth dry e tintura di cioccolato di Modica.",
-      ingredients: ["Rye Whiskey", "Amaro Siciliano", "Vermouth Dry", "Bitter al cacao"],
-      price: "€ 13",
-      profile: "Speziato & Profondo",
-      image: "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?q=80&w=800&auto=format&fit=crop",
-      featured: false
-    },
-    {
-      id: "mediterranean-gin-tonic",
-      name: "MEDITERRANEAN TONIC",
-      category: "classic",
-      description: "Gin distillato con capperi e limone siracusano, tonica premium al bergamotto, rametto di rosmarino.",
-      ingredients: ["Gin Mediterraneo", "Tonica Bergamotto", "Rosmarino", "Ginepro"],
-      price: "€ 11",
-      profile: "Botanico & Rinfrescante",
-      image: "https://images.unsplash.com/photo-1560512823-829485b8bf24?q=80&w=800&auto=format&fit=crop",
-      featured: false
-    },
-    {
-      id: "botanical-zeroproof",
-      name: "GIARDINO DI SIRACUSA (0% VOL)",
-      category: "mocktail",
-      description: "Distillato analcolico alle erbe, sciroppo di fiori di sambuco, cetriolo chiarificato e top di ginger beer.",
-      ingredients: ["Distillato 0.0%", "Fiori di Sambuco", "Cetriolo", "Ginger Beer"],
-      price: "€ 9",
-      profile: "Analcolico & Floreale",
-      image: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?q=80&w=800&auto=format&fit=crop",
-      featured: false
-    },
-    {
-      id: "smoked-old-fashioned",
-      name: "SMOKED OLD FASHIONED",
-      category: "classic",
-      description: "Bourbon Single Barrel, zolletta di zucchero muscovado, Angostura e affumicatura istantanea al legno di botte.",
-      ingredients: ["Single Barrel Bourbon", "Muscovado", "Angostura", "Fumo di botte"],
-      price: "€ 14",
-      profile: "Fumoso & Nobile",
-      image: "https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?q=80&w=800&auto=format&fit=crop",
-      featured: false
-    }
-  ],
-  dishes: [
-    {
-      id: "ant-1",
-      name: "Crudo di Gambero Rosso & Agrumi",
-      category: "antipasti",
-      description: "Gambero rosso di Mazara del Vallo, emulsione di arance amare siracusane, granita di mandarino tardivo e cialda di riso al nero di seppia.",
-      price: "€ 18",
-      image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=800&auto=format&fit=crop",
-      dietary: ["Pescato Fresco", "Gluten Free"],
-      featured: true
-    },
-    {
-      id: "ant-2",
-      name: "Tartare di Fassona al Coltello",
-      category: "antipasti",
-      description: "Battuta al coltello di fassona piemontese, tuorlo d'uovo bio marinato al soia, maionese leggera al cappero di Salina e chips di topinambur.",
-      price: "€ 16",
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
-      dietary: ["Carne Selezionata"],
-      featured: false
-    },
-    {
-      id: "ant-3",
-      name: "Polpo Croccante su Vellutata di Patate",
-      category: "antipasti",
-      description: "Tentacolo di polpo scottato alla piastra su crema di patate affumicate al faggio, polvere di olive nere dei monti Iblei e olio al prezzemolo.",
-      price: "€ 17",
-      image: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=800&auto=format&fit=crop",
-      dietary: ["Pescato Locale"],
-      featured: false
-    },
-    {
-      id: "pri-1",
-      name: "Risotto Carnaroli ai Crostacei & Salicornia",
-      category: "primi",
-      description: "Riso mantecato al burro acido, bisque profonda di scampi e gamberi, polvere di limone femminello di Siracusa e salicornia croccante.",
-      price: "€ 20",
-      image: "https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?q=80&w=800&auto=format&fit=crop",
-      dietary: ["Specialità dello Chef"],
-      featured: true
-    },
-    {
-      id: "pri-2",
-      name: "Tagliolini Fatti a Mano & Tonno Rosso",
-      category: "primi",
-      description: "Pasta all'uovo tirata a mano, battuto di tonno rosso del Mediterraneo, pomodorini datterini confit, finocchietto selvatico e mollica atturrata.",
-      price: "€ 19",
-      image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=800&auto=format&fit=crop",
-      dietary: ["Pasta Fresca"],
-      featured: false
-    },
-    {
-      id: "pri-3",
-      name: "Ravioli di Ricotta Iblea & Tartufo Nero",
-      category: "primi",
-      description: "Ravioli ripieni di ricotta fresca vaccina dei monti Iblei, fondo bruno vegetale alle erbe spontanee e scaglie di tartufo nero estivo.",
-      price: "€ 18",
-      image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=800&auto=format&fit=crop",
-      dietary: ["Vegetariano"],
-      featured: false
-    },
-    {
-      id: "sec-1",
-      name: "Trancio di Ricciola & Riduzione al Nero d'Avola",
-      category: "secondi",
-      description: "Ricciola scottata su vellutata di finocchi al profumo d'anice stellato, bietolina selvatica saltata e riduzione densa di Nero d'Avola.",
-      price: "€ 24",
-      image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=800&auto=format&fit=crop",
-      dietary: ["Pescato del Giorno"],
-      featured: true
-    },
-    {
-      id: "sec-2",
-      name: "Filetto di Manzo al Burro Chiarificato",
-      category: "secondi",
-      description: "Filetto di scottona cotto a bassa temperatura e rifinito alla brace, scalogno glassato al balsamico e purea di radici invernali.",
-      price: "€ 26",
-      image: "https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=800&auto=format&fit=crop",
-      dietary: ["Cottura a Bassa Temperatura"],
-      featured: false
-    },
-    {
-      id: "sec-3",
-      name: "Pancia di Maialino & Mele Cotogne",
-      category: "secondi",
-      description: "Pancia di maialino da latte a lenta cottura con cotenna croccante, purea speziata di mele cotogne e jus al vermouth ambrato.",
-      price: "€ 22",
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
-      dietary: ["Specialità"],
-      featured: false
-    },
-    {
-      id: "des-1",
-      name: "Sfera al Fondente 70% & Frutto della Passione",
-      category: "dessert",
-      description: "Guscio croccante di cioccolato amaro monorigine, cuore cremoso al frutto della passione, crumble di nocciole tostate e fior di sale.",
-      price: "€ 9",
-      image: "https://images.unsplash.com/photo-1579372786545-d24232daf58c?q=80&w=800&auto=format&fit=crop",
-      dietary: ["Dessert d'Autore"],
-      featured: true
-    },
-    {
-      id: "des-2",
-      name: "Cannolo Contemporaneo Scomposto",
-      category: "dessert",
-      description: "Cialda croccante al cacao e marsala, mousse leggera di ricotta fresca setacciata, scorzette di arancia candita bio e granella di pistacchio di Bronte DOP.",
-      price: "€ 8",
-      image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=800&auto=format&fit=crop",
-      dietary: ["Tradizione Reinterpretata"],
-      featured: false
-    }
-  ]
+  }
 };

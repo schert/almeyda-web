@@ -3,142 +3,127 @@ export type Language = 'it' | 'en';
 export interface TranslationDictionary {
   common: {
     brandName: string;
+    brandSubtitle: string; // "Antico Bistrot Siciliano"
     city: string;
     citySubtitle: string;
     bookTable: string;
     explore: string;
     close: string;
+    viewMenu: string;
     viewCocktailMenu: string;
-    viewDiningMenu: string;
+    viewCafeteriaMenu: string;
     ingredients: string;
     required: string;
   };
   navbar: {
     home: string;
-    cocktail: string;
-    dining: string;
-    atmosphere: string;
-    gallery: string;
-    siracusa: string;
+    menu: string;
+    cocktailBar: string;
+    caffetteria: string;
+    location: string;
+    experiences: string;
+    eventi: string;
+    contattaci: string;
     book: string;
-    digitalCocktailMenu: string;
-    digitalDiningMenu: string;
     openFrom: string;
     openMenu: string;
     closeMenu: string;
   };
   hero: {
-    badge: string;
+    badge: string; // "Antico Bistrot Siciliano · Teatro Comunale di Siracusa"
     headline: string;
-    description: string;
+    tributeTitle: string;
+    tributeParagraph1: string;
+    tributeParagraph2: string;
+    tributeParagraph3: string;
+    tributeParagraph4: string;
+    tributeParagraph5: string;
     bookCta: string;
     menuCta: string;
     scrollHint: string;
   };
-  intro: {
-    philosophyBadge: string;
-    statementLine1: string;
-    statementLine2: string;
+  menuSection: {
+    badge: string;
+    title: string;
+    subtitle: string;
     description: string;
+    exploreMenuBtn: string;
+    featuredBadge: string;
+    categories: {
+      all: string;
+      baguette: string;
+      antipasti: string;
+      primi: string;
+      secondi: string;
+      dessert: string;
+      viniOli: string;
+    };
+    dishes: {
+      id: string;
+      name: string;
+      category: 'baguette' | 'antipasti' | 'primi' | 'secondi' | 'dessert' | 'viniOli';
+      description: string;
+      price: string;
+      image: string;
+      notes?: string;
+      featured?: boolean;
+    }[];
   };
   cocktailSection: {
     badge: string;
     title: string;
     subtitle: string;
+    description: string;
     viewMenuBtn: string;
+    categories: {
+      all: string;
+      signature: string;
+      classici: string;
+      analcolici: string;
+    };
+    cocktails: {
+      id: string;
+      name: string;
+      category: 'signature' | 'classici' | 'analcolici';
+      description: string;
+      ingredients: string[];
+      price: string;
+      image: string;
+      profile: string;
+      featured: boolean;
+    }[];
   };
-  diningSection: {
+  caffetteriaSection: {
     badge: string;
     title: string;
     subtitle: string;
-    exploreMenuBtn: string;
-    featuredBadge: string;
-    categories: {
-      antipasti: string;
-      primi: string;
-      secondi: string;
-      dessert: string;
-    };
-  };
-  atmosphereSection: {
-    badge: string;
-    title: string;
     description: string;
-    photos: {
+    categories: {
+      all: string;
+      caffe: string;
+      pasticceria: string;
+      infusi: string;
+    };
+    items: {
       title: string;
-      subtitle: string;
+      category: 'caffe' | 'pasticceria' | 'infusi';
+      description: string;
+      price?: string;
+      tag: string;
     }[];
-  };
-  experienceSection: {
-    exploreBtn: string;
-    pillars: {
+    highlights: {
       title: string;
-      subtitle: string;
       description: string;
       iconName: string;
     }[];
-  };
-  gallerySection: {
-    badge: string;
-    title: string;
-    subtitle: string;
-    clickToEnlarge: string;
-    modalTitle: string;
-    items: {
-      id: string;
-      title: string;
-      category: string;
-      caption: string;
-      imageUrl: string;
-      aspect?: 'landscape' | 'portrait' | 'square';
-    }[];
-  };
-  reservationSection: {
-    badge: string;
-    title: string;
-    subtitle: string;
-    form: {
-      experienceTypeLabel: string;
-      experienceTypes: {
-        aperitivo: { title: string; desc: string };
-        cena: { title: string; desc: string };
-        dopocena: { title: string; desc: string };
-      };
-      areaLabel: string;
-      areas: {
-        cocktail_bar: string;
-        dining_room: string;
-        dehors: string;
-      };
-      dateLabel: string;
-      timeLabel: string;
-      guestsLabel: string;
-      guestsOption: string;
-      nameLabel: string;
-      namePlaceholder: string;
-      phoneLabel: string;
-      phonePlaceholder: string;
-      emailLabel: string;
-      emailPlaceholder: string;
-      notesLabel: string;
-      notesPlaceholder: string;
-      submitBtn: string;
-    };
-    confirmation: {
-      badge: string;
-      title: string;
-      greeting: string;
-      summaryNote: string;
-      fastTrackBadge: string;
-      whatsappBtn: string;
-      callBtn: string;
-      newRequestBtn: string;
-    };
   };
   locationSection: {
     badge: string;
     title: string;
     subtitle: string;
+    description: string;
+    theatreTitle: string;
+    theatreDescription: string;
     addressTitle: string;
     hoursTitle: string;
     directionsBtn: string;
@@ -147,62 +132,89 @@ export interface TranslationDictionary {
       hours: string;
       note?: string;
     }[];
+    gallery: {
+      title: string;
+      caption: string;
+      imageUrl: string;
+    }[];
+  };
+  experiencesSection: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    bookBtn: string;
+    items: {
+      title: string;
+      subtitle: string;
+      description: string;
+      duration: string;
+      tag: string;
+      iconName: string;
+    }[];
+  };
+  eventiSection: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    ctaBtn: string;
+    salaEventiTitle: string;
+    salaEventiDescription: string;
+    eventTypes: {
+      title: string;
+      description: string;
+      iconName: string;
+    }[];
+  };
+  contattaciSection: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    addressLabel: string;
+    phoneLabel: string;
+    whatsappLabel: string;
+    emailLabel: string;
+    hoursLabel: string;
+    form: {
+      title: string;
+      subtitle: string;
+      nameLabel: string;
+      namePlaceholder: string;
+      phoneLabel: string;
+      phonePlaceholder: string;
+      emailLabel: string;
+      emailPlaceholder: string;
+      subjectLabel: string;
+      subjectOptions: {
+        tavolo: string;
+        evento: string;
+        informazioni: string;
+      };
+      dateLabel: string;
+      timeLabel: string;
+      guestsLabel: string;
+      messageLabel: string;
+      messagePlaceholder: string;
+      submitBtn: string;
+    };
+    confirmation: {
+      title: string;
+      message: string;
+      whatsappBtn: string;
+      callBtn: string;
+      newRequestBtn: string;
+    };
   };
   footer: {
     tagline: string;
+    subTagline: string;
     description: string;
-    exploreTitle: string;
+    sectionsTitle: string;
     contactsTitle: string;
     hoursTitle: string;
     rights: string;
     backToTop: string;
   };
-  cocktailModal: {
-    badge: string;
-    title: string;
-    searchPlaceholder: string;
-    filters: {
-      all: string;
-      signature: string;
-      classic: string;
-      twist: string;
-      mocktail: string;
-    };
-    noResults: string;
-    bookTable: string;
-  };
-  diningModal: {
-    badge: string;
-    title: string;
-    filters: {
-      all: string;
-      antipasti: string;
-      primi: string;
-      secondi: string;
-      dessert: string;
-    };
-    noResults: string;
-    bookTable: string;
-  };
-  cocktails: {
-    id: string;
-    name: string;
-    category: 'signature' | 'classic' | 'twist' | 'mocktail';
-    description: string;
-    ingredients: string[];
-    price: string;
-    image: string;
-    profile: string;
-    featured: boolean;
-  }[];
-  dishes: {
-    id: string;
-    name: string;
-    category: 'antipasti' | 'primi' | 'secondi' | 'dessert';
-    description: string;
-    price: string;
-    image: string;
-    dietary: string[];
-    featured: boolean;
-  }[];
 }
+

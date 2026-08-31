@@ -1,6 +1,6 @@
 {
   "name": "Almeyda — Cocktail & Dining | Siracusa",
-  "description": "Sito web moderno, elegante e premium per Almeyda, cocktail bar e dining a Siracusa.",
+  "description": "Antico Bistrot Siciliano all'interno del Teatro Comunale di Siracusa. Omaggio a Giuseppe Damiani Almeyda: Menù, Cocktail Bar, Caffetteria, Location, Experiences, Eventi e Contatti.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, MapPin, Clock, Globe } from 'lucide-react';
-import { businessConfig } from '../config/almeydaConfig';
+import { Menu, X, MapPin, Clock } from 'lucide-react';
 import { useTranslation } from '../context/LanguageContext';
 import { AlmeydaLogo } from './AlmeydaLogo';
 
 interface NavbarProps {
   onOpenReservation: () => void;
-  onOpenCocktailMenu: () => void;
-  onOpenDiningMenu: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({
-  onOpenReservation,
-  onOpenCocktailMenu,
-  onOpenDiningMenu
-}) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useTranslation();
@@ -42,19 +35,23 @@ export const Navbar: React.FC<NavbarProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Le 8 Voci di Menu Richieste
   const navLinks = [
-    { label: t.navbar.home, href: '#hero' },
-    { label: t.navbar.cocktail, href: '#cocktail' },
-    { label: t.navbar.dining, href: '#dining' },
-    { label: t.navbar.atmosphere, href: '#atmosfera' },
-    { label: t.navbar.gallery, href: '#gallery' },
-    { label: t.navbar.siracusa, href: '#siracusa' },
+    { label: t.navbar.home, href: '#home' },
+    { label: t.navbar.menu, href: '#menu' },
+    { label: t.navbar.cocktailBar, href: '#cocktail-bar' },
+    { label: t.navbar.caffetteria, href: '#caffetteria' },
+    { label: t.navbar.location, href: '#location' },
+    { label: t.navbar.experiences, href: '#experiences' },
+    { label: t.navbar.eventi, href: '#eventi' },
+    { label: t.navbar.contattaci, href: '#contattaci' }
   ];
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    const element = document.querySelector(href);
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
     if (element) {
       const navOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
@@ -72,54 +69,56 @@ export const Navbar: React.FC<NavbarProps> = ({
         id="navbar"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-[#0A0B0D]/95 backdrop-blur-md py-4 border-b border-white/5 shadow-2xl'
-            : 'bg-gradient-to-b from-[#0A0B0D]/90 via-[#0A0B0D]/40 to-transparent py-5 border-b border-white/5'
+            ? 'bg-[#0A0B0D]/95 backdrop-blur-md py-3.5 border-b border-white/5 shadow-2xl'
+            : 'bg-gradient-to-b from-[#0A0B0D]/90 via-[#0A0B0D]/50 to-transparent py-4 border-b border-white/5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Left Brand & Location Indicator */}
-          <div className="flex items-center space-x-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
+          
+          {/* Logo Brand Sinistra */}
+          <div className="flex items-center space-x-3">
             <a
-              href="#hero"
-              onClick={(e) => scrollToSection(e, '#hero')}
+              href="#home"
+              onClick={(e) => scrollToSection(e, '#home')}
               className="group flex items-center space-x-3 focus:outline-none py-0.5"
-              aria-label="Almeyda Siracusa - Home"
+              aria-label="Almeyda - Antico Bistrot Siciliano"
             >
-              <div className="h-7 sm:h-8 md:h-9 w-auto max-w-[105px] sm:max-w-[125px] flex items-center transition-transform duration-300 group-hover:scale-105">
+              <div className="h-7 sm:h-8 md:h-9 w-auto max-w-[100px] sm:max-w-[120px] flex items-center transition-transform duration-300 group-hover:scale-105">
                 <AlmeydaLogo id="nav-brand-logo" className="h-full w-auto max-h-9 object-contain" glow={false} />
               </div>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.28em] uppercase font-light text-white/50 hidden md:inline-block border-l border-white/15 pl-3 self-center">
-                {t.common.citySubtitle}
+              <span className="text-[9px] sm:text-[10px] tracking-[0.24em] uppercase font-light text-white/50 hidden xl:inline-block border-l border-white/15 pl-3 self-center">
+                {t.common.brandSubtitle}
               </span>
             </a>
           </div>
 
-          {/* Desktop Navigation Links & Action */}
-          <div className="hidden lg:flex items-center space-x-7 text-[11px] tracking-[0.2em] uppercase font-medium">
+          {/* Navigazione Desktop Completa (8 voci) */}
+          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6 text-[10px] xl:text-[11px] tracking-[0.16em] uppercase font-medium">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-[#F5F2ED]/80 hover:text-[#D4AF37] transition-colors"
+                className="text-[#F5F2ED]/80 hover:text-[#D4AF37] transition-colors whitespace-nowrap"
               >
                 {link.label}
               </a>
             ))}
 
+            {/* Pulsante Prenotazione */}
             <button
               id="nav-book-button"
               onClick={onOpenReservation}
-              className="text-[#D4AF37] border-b border-[#D4AF37]/40 pb-0.5 hover:border-[#D4AF37] hover:text-white transition-all font-medium"
+              className="px-3.5 py-1.5 bg-[#D4AF37] hover:bg-white text-[#0A0B0D] font-bold transition-all text-[10px] tracking-[0.15em] uppercase shadow-sm"
             >
               {t.navbar.book}
             </button>
 
-            {/* Language Switcher Desktop */}
-            <div className="flex items-center space-x-1 pl-3 border-l border-white/15 text-[10px] tracking-[0.2em] font-medium">
+            {/* Selettore Lingua Desktop */}
+            <div className="flex items-center space-x-1 pl-2 border-l border-white/15 text-[10px] tracking-[0.15em] font-medium">
               <button
                 onClick={() => setLanguage('it')}
-                className={`px-1.5 py-0.5 transition-colors ${
+                className={`px-1 py-0.5 transition-colors ${
                   language === 'it'
                     ? 'text-[#D4AF37] font-bold border-b border-[#D4AF37]'
                     : 'text-white/40 hover:text-white'
@@ -131,7 +130,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="text-white/20">/</span>
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-1.5 py-0.5 transition-colors ${
+                className={`px-1 py-0.5 transition-colors ${
                   language === 'en'
                     ? 'text-[#D4AF37] font-bold border-b border-[#D4AF37]'
                     : 'text-white/40 hover:text-white'
@@ -141,11 +140,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                 EN
               </button>
             </div>
-          </div>
+          </nav>
 
-          {/* Mobile Language Switcher, CTA & Toggle */}
+          {/* Controllo Mobile */}
           <div className="flex items-center space-x-3 lg:hidden">
-            {/* Mobile Compact Language Switcher */}
+            {/* Selettore Lingua Mobile */}
             <div className="flex items-center space-x-1 text-[10px] tracking-wider font-semibold border border-white/10 px-2 py-1 bg-[#121316]">
               <button
                 onClick={() => setLanguage('it')}
@@ -164,7 +163,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={onOpenReservation}
-              className="text-[11px] tracking-[0.2em] uppercase text-[#D4AF37] border-b border-[#D4AF37]/40 pb-0.5"
+              className="text-[10px] tracking-[0.18em] uppercase text-[#D4AF37] border-b border-[#D4AF37]/40 pb-0.5 font-semibold"
             >
               {t.navbar.book}
             </button>
@@ -179,10 +178,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
+
         </div>
       </header>
 
-      {/* Fullscreen Mobile Menu Overlay */}
+      {/* Menu a schermo intero Mobile */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -191,15 +191,15 @@ export const Navbar: React.FC<NavbarProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#0A0B0D]/98 backdrop-blur-xl flex flex-col justify-between px-8 py-24 lg:hidden"
+            className="fixed inset-0 z-40 bg-[#0A0B0D]/98 backdrop-blur-xl flex flex-col justify-between px-8 py-24 lg:hidden overflow-y-auto"
           >
-            <div className="flex flex-col space-y-6 mt-4">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] tracking-[0.4em] uppercase text-[#D4AF37] font-light">
-                  {t.common.citySubtitle}
+            <div className="flex flex-col space-y-5">
+              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] font-light">
+                  {t.common.brandSubtitle}
                 </span>
 
-                {/* In-drawer language switch */}
+                {/* Selettore lingua dentro il menu mobile */}
                 <div className="flex items-center space-x-2 text-xs tracking-[0.2em]">
                   <button
                     onClick={() => setLanguage('it')}
@@ -220,65 +220,44 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </div>
               </div>
 
-              <div className="flex flex-col space-y-4">
+              {/* 8 Voci di Menu */}
+              <div className="flex flex-col space-y-3 pt-2">
                 {navLinks.map((link, idx) => (
                   <motion.a
                     key={link.label}
                     href={link.href}
                     onClick={(e) => scrollToSection(e, link.href)}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -15 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 + idx * 0.05, duration: 0.3 }}
-                    className="font-serif text-2xl tracking-[0.15em] italic text-[#F5F2ED] hover:text-[#D4AF37] transition-colors"
+                    transition={{ delay: 0.05 + idx * 0.04, duration: 0.25 }}
+                    className="font-serif text-xl tracking-[0.12em] italic text-[#F5F2ED] hover:text-[#D4AF37] transition-colors py-1"
                   >
                     {link.label}
                   </motion.a>
                 ))}
               </div>
-
-              {/* Quick Menu Cards Trigger in Mobile */}
-              <div className="pt-4 border-t border-white/5 flex flex-col space-y-3">
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenCocktailMenu();
-                  }}
-                  className="text-left text-xs tracking-[0.2em] uppercase text-[#D4AF37] flex items-center space-x-2 py-1"
-                >
-                  <span>{t.navbar.digitalCocktailMenu}</span>
-                </button>
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenDiningMenu();
-                  }}
-                  className="text-left text-xs tracking-[0.2em] uppercase text-[#D4AF37] flex items-center space-x-2 py-1"
-                >
-                  <span>{t.navbar.digitalDiningMenu}</span>
-                </button>
-              </div>
             </div>
 
-            {/* Bottom info in Mobile Menu */}
-            <div className="pt-6 border-t border-white/10 space-y-4">
+            {/* Parte Inferiore Menu Mobile */}
+            <div className="pt-6 border-t border-white/10 space-y-4 mt-6">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenReservation();
                 }}
-                className="w-full py-4 text-center text-[11px] tracking-[0.2em] uppercase font-bold text-[#0A0B0D] bg-[#D4AF37] hover:bg-white transition-all"
+                className="w-full py-3.5 text-center text-[11px] tracking-[0.2em] uppercase font-bold text-[#0A0B0D] bg-[#D4AF37] hover:bg-white transition-all shadow-lg"
               >
                 {t.common.bookTable}
               </button>
 
-              <div className="grid grid-cols-2 gap-4 text-xs text-[#F5F2ED]/70 pt-2 font-light">
+              <div className="grid grid-cols-2 gap-4 text-xs text-[#F5F2ED]/70 pt-1 font-light">
                 <div className="flex items-center space-x-2">
                   <MapPin size={14} className="text-[#D4AF37] shrink-0" />
                   <span className="truncate">{t.common.city}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock size={14} className="text-[#D4AF37] shrink-0" />
-                  <span>{t.navbar.openFrom}</span>
+                  <span className="truncate">{t.navbar.openFrom}</span>
                 </div>
               </div>
             </div>

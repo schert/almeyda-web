@@ -20,28 +20,27 @@ export const businessConfig: BusinessConfig = {
   introText: "Almeyda è uno spazio pensato per vivere la sera con il giusto ritmo: dalla cucina ai cocktail, dall'aperitivo all'ultima conversazione.",
 
   // ===========================================================================
-  // DATI DI CONTATTO & LOCATION (PLACEHOLDER CONFIGURABILI)
+  // DATI DI CONTATTO & LOCATION REALI
   // ===========================================================================
-  address: "INSERIRE INDIRIZZO",
-  addressNote: "Centro Storico / Ortigia — Siracusa (SR)",
-  phone: "+390931000000",
-  phoneDisplay: "+39 0931 000000",
-  whatsappNumber: "393330000000",
-  whatsappMessage: "Salve, desidero richiedere informazioni per una prenotazione da Almeyda Siracusa.",
-  email: "info@almeydasiracusa.it",
-  instagramHandle: "@almeydasiracusa",
-  instagramUrl: "https://instagram.com/almeydasiracusa",
-  googleMapsUrl: "https://maps.google.com/?q=Siracusa+Sicilia",
-  reservationUrl: "#prenotazione",
+  address: "Via del Teatro, 4",
+  addressNote: "96100 Siracusa SR · All'interno del Teatro Comunale di Siracusa (Ortigia)",
+  phone: "+393290312753",
+  phoneDisplay: "+39 329 031 2753",
+  whatsappNumber: "393290312753",
+  whatsappMessage: "Salve, desidero richiedere informazioni per una prenotazione da Almeyda Caffè del Teatro (Siracusa).",
+  email: "almeydaortigia@gmail.com",
+  instagramHandle: "@almeydaortigia",
+  instagramUrl: "https://www.instagram.com/explore/locations/almeyda-siracusa/",
+  googleMapsUrl: "https://www.google.com/maps/place/Almeyda+Caff%C3%A8+del+Teatro/@37.0590639,15.2923417,17z/data=!3m1!4b1!4m6!3m5!1s0x1313cd00033160c5:0xa500dbd89e1274bb!8m2!3d37.0590596!4d15.2949166!16s%2Fg%2F11wwq9bssn",
+  reservationUrl: "#contattaci",
 
   // ===========================================================================
   // ORARI DI APERTURA
   // ===========================================================================
   openingHours: [
-    { days: "Martedì — Giovedì", hours: "18:30 — 01:30", note: "Aperitivo, Dining & After Dinner" },
-    { days: "Venerdì — Sabato", hours: "18:30 — 02:30", note: "Aperitivo, Dining & Cocktail Bar" },
-    { days: "Domenica", hours: "18:30 — 01:30", note: "Aperitivo & Dining serale" },
-    { days: "Lunedì", hours: "Chiuso", note: "Giorno di riposo" }
+    { days: "Mercoledì — Domenica", hours: "10:00 — 15:00 | 18:30 — 00:30", note: "Caffetteria, Pranzo, Bistrot & Cocktail Bar" },
+    { days: "Lunedì", hours: "12:00 — 15:00 | 19:00 — 23:30", note: "Pranzo, Aperitivo & Dining" },
+    { days: "Martedì", hours: "Chiuso", note: "Giorno di riposo settimanale" }
   ],
 
   // ===========================================================================
