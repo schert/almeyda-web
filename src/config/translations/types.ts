@@ -17,11 +17,13 @@ export interface TranslationDictionary {
   };
   navbar: {
     home: string;
+    carta: string;
     menu: string;
     cocktailBar: string;
     caffetteria: string;
     location: string;
     experiences: string;
+    spazioArte: string;
     eventi: string;
     contattaci: string;
     book: string;
@@ -153,6 +155,23 @@ export interface TranslationDictionary {
       iconName: string;
     }[];
   };
+  spazioArteSection: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    quote: string;
+    description1: string;
+    description2: string;
+    description3: string;
+    ctaArtist: string;
+    ctaWhatsapp: string;
+    features: {
+      title: string;
+      description: string;
+      tag: string;
+      iconName: string;
+    }[];
+  };
   eventiSection: {
     badge: string;
     title: string;
@@ -189,6 +208,7 @@ export interface TranslationDictionary {
       subjectOptions: {
         tavolo: string;
         evento: string;
+        arte: string;
         informazioni: string;
       };
       dateLabel: string;

@@ -7,11 +7,10 @@ import React from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { MenuSection } from './components/MenuSection';
-import { CocktailSection } from './components/CocktailSection';
-import { CafeteriaSection } from './components/CafeteriaSection';
+import { UnifiedCartaSection } from './components/UnifiedCartaSection';
 import { LocationSection } from './components/LocationSection';
 import { ExperiencesSection } from './components/ExperiencesSection';
+import { ArtSpaceSection } from './components/ArtSpaceSection';
 import { EventsSection } from './components/EventsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -25,7 +24,7 @@ function MainApp() {
   };
 
   const handleScrollToMenu = () => {
-    const menuSection = document.getElementById('menu');
+    const menuSection = document.getElementById('la-carta') || document.getElementById('menu');
     if (menuSection) {
       menuSection.scrollIntoView({ behavior: 'smooth' });
     }
@@ -33,7 +32,7 @@ function MainApp() {
 
   return (
     <div className="min-h-screen bg-[#0A0B0D] text-[#F5F2ED] selection:bg-[#D4AF37]/30 selection:text-[#F5F2ED] relative font-sans">
-      {/* Barra di Navigazione Superiore con le 8 voci richieste */}
+      {/* Barra di Navigazione Superiore */}
       <Navbar onOpenReservation={handleScrollToContact} />
 
       <main id="main-content">
@@ -43,35 +42,30 @@ function MainApp() {
           onOpenMenu={handleScrollToMenu}
         />
 
-        {/* 2. Sezione Menù */}
-        <MenuSection
+        {/* 2. Sezione Unificata La Carta (Bistrot, Cocktail Bar & Caffetteria) */}
+        <UnifiedCartaSection
           onOpenReservation={handleScrollToContact}
         />
 
-        {/* 3. Sezione Cocktail Bar */}
-        <CocktailSection
-          onOpenReservation={handleScrollToContact}
-        />
-
-        {/* 4. Sezione Caffetteria */}
-        <CafeteriaSection
-          onOpenReservation={handleScrollToContact}
-        />
-
-        {/* 5. Sezione Location */}
+        {/* 3. Sezione Ambientazione */}
         <LocationSection />
 
-        {/* 6. Sezione Experiences */}
+        {/* 4. Sezione Esperienze */}
         <ExperiencesSection
           onOpenReservation={handleScrollToContact}
         />
 
-        {/* 7. Sezione Eventi */}
+        {/* 5. Sezione Spazio all'Arte */}
+        <ArtSpaceSection
+          onOpenArtInquiry={handleScrollToContact}
+        />
+
+        {/* 6. Sezione Eventi */}
         <EventsSection
           onOpenReservation={handleScrollToContact}
         />
 
-        {/* 8. Sezione Contattaci */}
+        {/* 7. Sezione Contattaci */}
         <ContactSection />
       </main>
 

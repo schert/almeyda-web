@@ -35,14 +35,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Le 8 Voci di Menu Richieste
+  // Voci di Navigazione
   const navLinks = [
     { label: t.navbar.home, href: '#home' },
-    { label: t.navbar.menu, href: '#menu' },
-    { label: t.navbar.cocktailBar, href: '#cocktail-bar' },
-    { label: t.navbar.caffetteria, href: '#caffetteria' },
-    { label: t.navbar.location, href: '#location' },
-    { label: t.navbar.experiences, href: '#experiences' },
+    { label: t.navbar.carta, href: '#la-carta' },
+    { label: t.navbar.location, href: '#ambientazione' },
+    { label: t.navbar.experiences, href: '#esperienze' },
+    { label: t.navbar.spazioArte, href: '#spazio-arte' },
     { label: t.navbar.eventi, href: '#eventi' },
     { label: t.navbar.contattaci, href: '#contattaci' }
   ];

@@ -17,11 +17,13 @@ export const enTranslations: TranslationDictionary = {
   },
   navbar: {
     home: "Home",
+    carta: "The Menu & Bar",
     menu: "Menu",
     cocktailBar: "Cocktail Bar",
     caffetteria: "Cafeteria",
-    location: "Location",
+    location: "Setting",
     experiences: "Experiences",
+    spazioArte: "Art Space",
     eventi: "Events",
     contattaci: "Contact Us",
     book: "Book",
@@ -296,7 +298,7 @@ export const enTranslations: TranslationDictionary = {
   },
   locationSection: {
     badge: "In the Heart of Ortigia",
-    title: "Location",
+    title: "Setting",
     subtitle: "Inside the magnificent Municipal Theatre of Syracuse.",
     description: "Stepping inside Almeyda means entering a historic monument guarding memories, art, and timeless aesthetics. Designed by 19th-century masters, it is the quintessential setting for a Sicilian bistrot.",
     theatreTitle: "The Municipal Theatre of Syracuse",
@@ -365,6 +367,43 @@ export const enTranslations: TranslationDictionary = {
       }
     ]
   },
+  spazioArteSection: {
+    badge: "Creative Residency & Welcoming",
+    title: "Art Space",
+    subtitle: "A home within the Theatre for musicians, painters, writers, and creative spirits.",
+    quote: "Contribute to bringing color to Almeyda: we believe in vibrant socialization and the authentic exchange of ideas and culture that creates art.",
+    description1: "Almeyda is a living venue that breathes the artistic legacy of the Municipal Theatre of Syracuse. We warmly open our doors to all artists, whether traveling through or residing in Syracuse, who wish to share their creative expression.",
+    description2: "Whether you are looking for an intimate setting for an acoustic performance, a poetry reading, an art showcase, or simply a safe logistical shelter to store your musical instruments and stage equipment during rehearsals or walks in Ortigia, you will always find warmth and respect here.",
+    description3: "Stop by for refreshment, enjoy a complimentary coffee at the bar in exchange for a pleasant conversation, a story, a sheet of music, or a shared vision. Together, we shape a vibrant sanctuary where culture thrives daily.",
+    ctaArtist: "Submit Your Proposal",
+    ctaWhatsapp: "Direct Artist Line",
+    features: [
+      {
+        title: "Performance & Live Stage",
+        description: "An intimate acoustic stage for musical sets, jam sessions, poetic readings, and performances among the bistrot tables.",
+        tag: "Open Stage",
+        iconName: "Music"
+      },
+      {
+        title: "Logistical Shelter & Instrument Care",
+        description: "A secure, guarded place to store your guitars, cases, canvases, props, and backpacks during your day in Ortigia.",
+        tag: "Logistical Base",
+        iconName: "ShieldCheck"
+      },
+      {
+        title: "A Coffee for a Conversation",
+        description: "Warm hospitality: an espresso or a drink on the house to get to know each other, exchange anecdotes, and foster new ideas.",
+        tag: "Hospitality",
+        iconName: "Coffee"
+      },
+      {
+        title: "Socialization & Cultural Networking",
+        description: "Meet fellow creatives and connect with our theater-loving community in an inviting, unpretentious setting.",
+        tag: "Cultural Exchange",
+        iconName: "Users"
+      }
+    ]
+  },
   eventiSection: {
     badge: "Unforgettable Theatre Moments",
     title: "Events",
@@ -418,6 +457,7 @@ export const enTranslations: TranslationDictionary = {
       subjectOptions: {
         tavolo: "Table Reservation (Lunch / Dinner / Drinks)",
         evento: "Private Event Organization",
+        arte: "Artistic Proposal / Art Space",
         informazioni: "General Information Inquiry"
       },
       dateLabel: "Preferred Date",

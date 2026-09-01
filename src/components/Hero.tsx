@@ -45,21 +45,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation, onOpenMenu }) => 
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-900/10 via-transparent to-[#0A0B0D]/90" />
       </div>
 
-      {/* Cornice decorativa sottile in stile Liberty */}
-      <div className="absolute inset-4 sm:inset-8 md:inset-12 border border-[#D4AF37]/15 pointer-events-none z-10 hidden sm:block" />
-
       {/* Contenuto Principale Hero */}
       <div className="relative z-20 max-w-5xl mx-auto px-6 text-center pt-32 pb-16 flex flex-col items-center justify-center">
-        
-        {/* Distintivo Antico Bistrot Siciliano */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-block mb-6 px-4 sm:px-5 py-2 border border-[#D4AF37]/35 text-[#D4AF37] text-[10px] sm:text-[11px] tracking-[0.25em] uppercase bg-[#0A0B0D]/80 backdrop-blur-md shadow-lg"
-        >
-          <span className="font-medium">{t.hero.badge}</span>
-        </motion.div>
 
         {/* Logo Ufficiale Vettoriale in Alta Definizione */}
         <motion.div

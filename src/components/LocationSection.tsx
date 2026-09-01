@@ -8,7 +8,9 @@ export const LocationSection: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="location" className="py-24 md:py-32 bg-[#0A0B0D] text-[#F5F2ED] relative border-t border-white/5">
+    <section id="ambientazione" className="py-24 md:py-32 bg-[#0A0B0D] text-[#F5F2ED] relative border-t border-white/5 scroll-mt-20">
+      {/* Anchor per retrocompatibilità link #location */}
+      <span id="location" className="absolute -top-24" />
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Intestazione Sezione */}
@@ -51,12 +53,17 @@ export const LocationSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative aspect-16/10 rounded-sm overflow-hidden border border-white/10">
+            <div className="lg:col-span-5 relative aspect-16/10 rounded-sm overflow-hidden border border-white/10 group shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1000&auto=format&fit=crop"
-                alt="Teatro Comunale di Siracusa - Ortigia"
-                className="w-full h-full object-cover filter brightness-[0.85]"
+                src="/images/teatro-comunale-siracusa-interno.jpg"
+                alt="Interno del Teatro Comunale di Siracusa - Volta affrescata e Palchetti"
+                className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700"
+                referrerPolicy="no-referrer"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B0D]/70 via-transparent to-transparent pointer-events-none" />
+              <span className="absolute bottom-2.5 right-3 text-[9px] uppercase tracking-wider text-[#D4AF37] bg-black/60 backdrop-blur-xs px-2 py-0.5 border border-[#D4AF37]/30">
+                Sala Storica
+              </span>
             </div>
           </div>
         </div>

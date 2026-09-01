@@ -23,7 +23,9 @@ export const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({ onOpenRe
   };
 
   return (
-    <section id="experiences" className="py-24 md:py-32 bg-[#0E1013] text-[#F5F2ED] relative border-t border-white/5">
+    <section id="esperienze" className="py-24 md:py-32 bg-[#0E1013] text-[#F5F2ED] relative border-t border-white/5 scroll-mt-20">
+      {/* Anchor per retrocompatibilità link #experiences */}
+      <span id="experiences" className="absolute -top-24" />
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Intestazione Sezione */}

@@ -132,21 +132,29 @@ export const ContactSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Orari */}
+                {/* Orari di Apertura */}
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-full border border-[#D4AF37]/30 bg-[#0A0B0D] flex items-center justify-center shrink-0">
                     <Clock className="w-4 h-4 text-[#D4AF37]" />
                   </div>
-                  <div>
-                    <h4 className="text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] font-semibold mb-1">
+                  <div className="w-full">
+                    <h4 className="text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] font-semibold mb-2">
                       {t.contattaciSection.hoursLabel}
                     </h4>
-                    <p className="text-white/90 text-xs leading-relaxed font-medium">
-                      Mer — Dom: 10:00 — 15:00 | 18:30 — 00:30
-                    </p>
-                    <p className="text-white/60 text-[11px] leading-relaxed">
-                      Lun: 12:00 — 15:00 | 19:00 — 23:30 (Mar: Chiuso)
-                    </p>
+                    <div className="space-y-1.5 text-xs">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1 border-b border-white/5">
+                        <span className="text-[#F5F2ED] font-medium">Mercoledì — Domenica:</span>
+                        <span className="text-[#D4AF37] font-mono">10:00 — 15:00 | 18:30 — 00:30</span>
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1 border-b border-white/5">
+                        <span className="text-[#F5F2ED] font-medium">Lunedì:</span>
+                        <span className="text-[#D4AF37] font-mono">12:00 — 15:00 | 19:00 — 23:30</span>
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1">
+                        <span className="text-[#F5F2ED] font-medium">Martedì:</span>
+                        <span className="text-white/70 italic">Chiuso (Riposo settimanale)</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -181,10 +189,11 @@ export const ContactSection: React.FC = () => {
                       <label className="block text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] mb-2 font-medium">
                         {t.contattaciSection.form.subjectLabel}
                       </label>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {[
                           { id: 'tavolo', label: t.contattaciSection.form.subjectOptions.tavolo },
                           { id: 'evento', label: t.contattaciSection.form.subjectOptions.evento },
+                          { id: 'arte', label: t.contattaciSection.form.subjectOptions.arte },
                           { id: 'informazioni', label: t.contattaciSection.form.subjectOptions.informazioni }
                         ].map((opt) => (
                           <button

@@ -31,11 +31,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenReservation }) => {
 
   const navLinks = [
     { label: t.navbar.home, href: '#home' },
-    { label: t.navbar.menu, href: '#menu' },
-    { label: t.navbar.cocktailBar, href: '#cocktail-bar' },
-    { label: t.navbar.caffetteria, href: '#caffetteria' },
-    { label: t.navbar.location, href: '#location' },
-    { label: t.navbar.experiences, href: '#experiences' },
+    { label: t.navbar.carta, href: '#la-carta' },
+    { label: t.navbar.location, href: '#ambientazione' },
+    { label: t.navbar.experiences, href: '#esperienze' },
+    { label: t.navbar.spazioArte, href: '#spazio-arte' },
     { label: t.navbar.eventi, href: '#eventi' },
     { label: t.navbar.contattaci, href: '#contattaci' }
   ];
@@ -140,11 +139,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenReservation }) => {
                 </a>
               </div>
 
-              <div className="pt-2 text-[11px] text-white/50 border-t border-white/5">
-                <span className="text-[#D4AF37] block font-medium uppercase tracking-wider text-[10px] mb-1">
+              <div className="pt-3 text-[11px] text-white/70 border-t border-white/5 space-y-1.5">
+                <span className="text-[#D4AF37] block font-medium uppercase tracking-wider text-[10px] mb-2">
                   {t.footer.hoursTitle}
                 </span>
-                {t.locationSection.openingHours[0]?.days}: {t.locationSection.openingHours[0]?.hours}
+                {t.locationSection.openingHours.map((slot, idx) => (
+                  <div key={idx} className="flex justify-between items-baseline gap-2">
+                    <span className="text-white/60">{slot.days}:</span>
+                    <span className="text-[#F5F2ED] font-mono text-[10px] sm:text-[11px] text-right">{slot.hours}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

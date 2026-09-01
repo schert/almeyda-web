@@ -17,11 +17,13 @@ export const itTranslations: TranslationDictionary = {
   },
   navbar: {
     home: "Home",
+    carta: "La Carta",
     menu: "Menù",
     cocktailBar: "Cocktail Bar",
     caffetteria: "Caffetteria",
-    location: "Location",
-    experiences: "Experiences",
+    location: "Ambientazione",
+    experiences: "Esperienze",
+    spazioArte: "Spazio all'Arte",
     eventi: "Eventi",
     contattaci: "Contattaci",
     book: "Prenota",
@@ -296,13 +298,13 @@ export const itTranslations: TranslationDictionary = {
   },
   locationSection: {
     badge: "Nel Cuore di Ortigia",
-    title: "Location",
+    title: "Ambientazione",
     subtitle: "All'interno del magnifico Teatro Comunale di Siracusa.",
     description: "Varcare la soglia di Almeyda significa entrare in uno spazio monumentale che custodisce memoria, arte e bellezza. L'edificio, progettato e decorato sotto la guida dei grandi maestri dell'Ottocento, è la cornice ideale per un antico bistrot d'eccellenza.",
     theatreTitle: "Il Teatro Comunale di Siracusa",
     theatreDescription: "Inaugurato alla fine dell'Ottocento nel cuore di Ortigia, il Teatro è un capolavoro di architettura e decorazione. Almeyda vive in armonia con questi ambienti storici, offrendo una sala interna d'epoca e un elegante spazio all'aperto.",
     addressTitle: "Indirizzo & Come Raggiungerci",
-    hoursTitle: "Orari di Accoglienza",
+    hoursTitle: "Orari di Apertura",
     directionsBtn: "Indicazioni Stradali su Mappa",
     openingHours: [
       { days: "Mercoledì — Domenica", hours: "10:00 — 15:00 | 18:30 — 00:30", note: "Caffetteria, Pranzo, Aperitivo & Cocktail Bar" },
@@ -334,7 +336,7 @@ export const itTranslations: TranslationDictionary = {
   },
   experiencesSection: {
     badge: "Coinvolgere Tutti i Cinque Sensi",
-    title: "Experiences",
+    title: "Esperienze",
     subtitle: "Percorsi gastronomici, sensoriali e culturali creati su misura.",
     description: "Ogni esperienza da Almeyda è pensata per far scoprire l'anima profonda della Sicilia: dall'olio extravergine d'oliva d'eccellenza alla degustazione dei vini, fino alle lezioni private di miscelazione.",
     bookBtn: "Richiedi Esperienza",
@@ -362,6 +364,43 @@ export const itTranslations: TranslationDictionary = {
         duration: "Cena completa",
         tag: "Esclusivo",
         iconName: "Utensils"
+      }
+    ]
+  },
+  spazioArteSection: {
+    badge: "Residenza Creativa & Accoglienza",
+    title: "Spazio all'Arte",
+    subtitle: "Una casa nel cuore del Teatro per musicisti, pittori, scrittori e spiriti creativi.",
+    quote: "Contribuisci nel dare colore ad Almeyda: crediamo nella socializzazione viva e nello scambio autentico di idee e cultura che fa arte.",
+    description1: "Almeyda è un luogo vivo che respira l'eredità artistica del Teatro Comunale di Siracusa. Per questo apriamo con entusiasmo le nostre porte a tutti gli artisti, di passaggio o residenti, che desiderano condividere la propria sensibilità.",
+    description2: "Che tu sia alla ricerca di uno spazio intimo per un'esibizione acustica, una lettura poetica, un'esposizione temporanea o semplicemente di un appoggio logistico sicuro dove custodire i tuoi strumenti musicali e materiali di scena durante le prove o le tue giornate in Ortigia, da noi troverai sempre disponibilità e rispetto.",
+    description3: "Fermati per un ristoro, lasciati offrire un caffè al bancone in cambio di una chiacchierata, un racconto, uno spartito o un'idea condivisa. Insieme diamo forma a uno spazio dove la cultura si incontra e si rinnova ogni giorno.",
+    ctaArtist: "Presenta la tua Idea",
+    ctaWhatsapp: "Contatto Diretto Artisti",
+    features: [
+      {
+        title: "Spazio di Esibizione & Live",
+        description: "Palco intimo per set acustici, improvvisazioni musicali, reading teatrali e performance tra i tavoli del bistrot.",
+        tag: "Palco Aperto",
+        iconName: "Music"
+      },
+      {
+        title: "Appoggio Logistico & Custodia",
+        description: "Un rifugio sicuro e custodito dove posare chitarre, custodie, tele, attrezzi di scena e zaini durante la tua sosta a Siracusa.",
+        tag: "Punto di Appoggio",
+        iconName: "ShieldCheck"
+      },
+      {
+        title: "Un Caffè per una Chiacchierata",
+        description: "Punto di ristoro sincero: un espresso o un calice offerto al banco per conoscersi, scambiare aneddoti e seminare nuove idee.",
+        tag: "Accoglienza",
+        iconName: "Coffee"
+      },
+      {
+        title: "Socializzazione & Connessione Culturale",
+        description: "Incontra altri creativi e connettiti con il pubblico sensibile del Teatro in un'atmosfera calda e senza formalismi.",
+        tag: "Scambio Culturale",
+        iconName: "Users"
       }
     ]
   },
@@ -404,7 +443,7 @@ export const itTranslations: TranslationDictionary = {
     phoneLabel: "Telefono",
     whatsappLabel: "WhatsApp Diretto",
     emailLabel: "Posta Elettronica",
-    hoursLabel: "Orario Continuato",
+    hoursLabel: "Orari di Apertura",
     form: {
       title: "Invia una Richiesta",
       subtitle: "Compila il modulo sottostante, il nostro personale ti risponderà con tempestività.",
@@ -418,6 +457,7 @@ export const itTranslations: TranslationDictionary = {
       subjectOptions: {
         tavolo: "Prenotazione Tavolo (Pranzo / Cena / Drink)",
         evento: "Organizzazione Evento Privato",
+        arte: "Proposta Artistica / Spazio all'Arte",
         informazioni: "Richiesta Informazioni Generali"
       },
       dateLabel: "Data Desiderata",
