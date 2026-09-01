@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { useTranslation } from '../context/LanguageContext';
 import { MapPin, Clock, Navigation, Landmark } from 'lucide-react';
 import { businessConfig } from '../config/almeydaConfig';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export const LocationSection: React.FC = () => {
   const { t } = useTranslation();
@@ -55,7 +56,7 @@ export const LocationSection: React.FC = () => {
 
             <div className="lg:col-span-5 relative aspect-16/10 rounded-sm overflow-hidden border border-white/10 group shadow-lg">
               <img
-                src="/images/teatro-comunale-siracusa-interno.jpg"
+                src={getAssetUrl('images/teatro-comunale-siracusa-interno.jpg')}
                 alt="Interno del Teatro Comunale di Siracusa - Volta affrescata e Palchetti"
                 className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"

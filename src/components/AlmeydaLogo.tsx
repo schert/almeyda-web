@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 interface AlmeydaLogoProps {
   className?: string;
@@ -11,9 +12,7 @@ export const AlmeydaLogo: React.FC<AlmeydaLogoProps> = ({
   id = "almeyda-brand-logo",
   glow = true
 }) => {
-  const basePath = (import.meta as { env?: { BASE_URL?: string } }).env?.BASE_URL || '/';
-  const cleanBase = basePath.endsWith('/') ? basePath : `${basePath}/`;
-  const logoUrl = `${cleanBase}images/almeyda-logo.svg`;
+  const logoUrl = getAssetUrl('images/almeyda-logo.svg');
 
   return (
     <img
