@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { useTranslation } from '../context/LanguageContext';
 import { AlmeydaLogo } from './AlmeydaLogo';
-import { Sparkles, UtensilsCrossed, Compass } from 'lucide-react';
 
 interface HeroProps {
   onOpenReservation: () => void;
@@ -104,70 +103,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation, onOpenMenu }) => 
           </button>
         </motion.div>
 
-        {/* =========================================================================
-            TRIBUTO & MANIFESTO STORICO A GIUSEPPE DAMIANI ALMEYDA
-            ========================================================================= */}
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 1.1, delay: 0.3 }}
-          className="mt-16 sm:mt-24 p-6 sm:p-10 md:p-12 border border-[#D4AF37]/25 bg-[#121317]/90 backdrop-blur-md shadow-2xl relative text-left max-w-4xl w-full"
-        >
-          {/* Angoli decorativi Liberty */}
-          <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[#D4AF37]" />
-          <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[#D4AF37]" />
-          <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-[#D4AF37]" />
-          <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-[#D4AF37]" />
-
-          <div className="flex items-center space-x-3 mb-6 border-b border-white/10 pb-4">
-            <Compass className="w-5 h-5 text-[#D4AF37]" />
-            <h2 className="text-[12px] sm:text-[13px] tracking-[0.25em] uppercase font-bold text-[#D4AF37]">
-              {t.hero.tributeTitle}
-            </h2>
-          </div>
-
-          <div className="space-y-4 text-[#E2DFD8] text-sm sm:text-base leading-relaxed font-light font-sans">
-            <p className="border-l-2 border-[#D4AF37]/50 pl-4 italic text-white/90">
-              {t.hero.tributeParagraph1}
-            </p>
-            <p>
-              {t.hero.tributeParagraph2}
-            </p>
-            <p>
-              {t.hero.tributeParagraph3}
-            </p>
-            <div className="pt-2">
-              <p className="font-medium text-[#E8D5B5]">
-                {t.hero.tributeParagraph4}
-              </p>
-              <p className="text-white/80 mt-2">
-                {t.hero.tributeParagraph5}
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-[11px] tracking-[0.18em] uppercase text-white/60">
-            <span className="flex items-center space-x-2 text-[#D4AF37]">
-              <UtensilsCrossed className="w-4 h-4" />
-              <span>Baguette Calde · Oli & Vini · Homemade</span>
-            </span>
-            <button
-              onClick={() => scrollToSection('menu')}
-              className="text-[#D4AF37] hover:text-white transition-colors underline underline-offset-4"
-            >
-              {t.menuSection.exploreMenuBtn} →
-            </button>
-          </div>
-        </motion.div>
-
         {/* Indicatore di Scorrimento */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 1 }}
-          onClick={() => scrollToSection('menu')}
-          className="mt-12 flex flex-col items-center cursor-pointer group opacity-60 hover:opacity-100 transition-opacity"
+          transition={{ delay: 1.0, duration: 0.8 }}
+          onClick={() => scrollToSection('chi-siamo')}
+          className="mt-16 flex flex-col items-center cursor-pointer group opacity-60 hover:opacity-100 transition-opacity"
           aria-label={t.hero.scrollHint}
         >
           <span className="text-[9px] tracking-[0.3em] uppercase text-white/50 group-hover:text-[#D4AF37] transition-colors mb-2 font-light">

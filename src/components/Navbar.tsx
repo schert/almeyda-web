@@ -38,8 +38,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
   // Voci di Navigazione
   const navLinks = [
     { label: t.navbar.home, href: '#home' },
-    { label: t.navbar.carta, href: '#la-carta' },
+    { label: t.navbar.about, href: '#chi-siamo' },
+    { label: t.navbar.carta, href: '#sapori' },
     { label: t.navbar.location, href: '#ambientazione' },
+    { label: t.navbar.store, href: '#negozio' },
     { label: t.navbar.experiences, href: '#esperienze' },
     { label: t.navbar.spazioArte, href: '#spazio-arte' },
     { label: t.navbar.eventi, href: '#eventi' },

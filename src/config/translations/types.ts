@@ -1,5 +1,7 @@
 export type Language = 'it' | 'en';
 
+export type ContactSubject = 'tavolo' | 'esperienze' | 'evento' | 'arte' | 'store' | 'informazioni';
+
 export interface TranslationDictionary {
   common: {
     brandName: string;
@@ -17,6 +19,7 @@ export interface TranslationDictionary {
   };
   navbar: {
     home: string;
+    about: string;
     carta: string;
     menu: string;
     cocktailBar: string;
@@ -25,6 +28,7 @@ export interface TranslationDictionary {
     experiences: string;
     spazioArte: string;
     eventi: string;
+    store: string;
     contattaci: string;
     book: string;
     openFrom: string;
@@ -34,12 +38,6 @@ export interface TranslationDictionary {
   hero: {
     badge: string; // "Antico Bistrot Siciliano · Teatro Comunale di Siracusa"
     headline: string;
-    tributeTitle: string;
-    tributeParagraph1: string;
-    tributeParagraph2: string;
-    tributeParagraph3: string;
-    tributeParagraph4: string;
-    tributeParagraph5: string;
     bookCta: string;
     menuCta: string;
     scrollHint: string;
@@ -50,25 +48,13 @@ export interface TranslationDictionary {
     subtitle: string;
     description: string;
     exploreMenuBtn: string;
-    featuredBadge: string;
-    categories: {
-      all: string;
-      baguette: string;
-      antipasti: string;
-      primi: string;
-      secondi: string;
-      dessert: string;
-      viniOli: string;
-    };
-    dishes: {
+    visitCta: string;
+    gallery: {
       id: string;
-      name: string;
-      category: 'baguette' | 'antipasti' | 'primi' | 'secondi' | 'dessert' | 'viniOli';
+      title: string;
       description: string;
-      price: string;
-      image: string;
-      notes?: string;
-      featured?: boolean;
+      imageUrl: string;
+      highlight?: string;
     }[];
   };
   cocktailSection: {
@@ -126,6 +112,15 @@ export interface TranslationDictionary {
     description: string;
     theatreTitle: string;
     theatreDescription: string;
+    tributeText: string;
+    roomsTitle: string;
+    roomsSubtitle: string;
+    rooms: {
+      name: string;
+      description: string;
+      iconName: string;
+      tag: string;
+    }[];
     addressTitle: string;
     hoursTitle: string;
     directionsBtn: string;
@@ -140,11 +135,43 @@ export interface TranslationDictionary {
       imageUrl: string;
     }[];
   };
+  aboutSection: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    aboutTitle: string;
+    aboutText1: string;
+    aboutText2: string;
+    ideaTitle: string;
+    ideaSubtitle: string;
+    ideaQuote: string;
+    ideaPoints: {
+      title: string;
+      description: string;
+      iconName: string;
+    }[];
+    offerTitle: string;
+    offerSubtitle: string;
+    offerText1: string;
+    offerText2: string;
+    staffTitle: string;
+    staffSubtitle: string;
+    staffQuote: string;
+    staffMembers: {
+      role: string;
+      name: string;
+      iconName: string;
+      department: string;
+    }[];
+    languagesLabel: string;
+    languages: string[];
+  };
   experiencesSection: {
     badge: string;
     title: string;
     subtitle: string;
     description: string;
+    offerAtmosphere: string;
     bookBtn: string;
     items: {
       title: string;
@@ -172,6 +199,32 @@ export interface TranslationDictionary {
       iconName: string;
     }[];
   };
+  storeSection: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    inStoreNotice: string;
+    ctaWhatsapp: string;
+    ctaInquire: string;
+    categories: {
+      all: string;
+      oli: string;
+      dispensa: string;
+      vini: string;
+      ceramiche: string;
+    };
+    products: {
+      id: string;
+      title: string;
+      category: 'oli' | 'dispensa' | 'vini' | 'ceramiche';
+      description: string;
+      origin: string;
+      tag: string;
+      imageUrl: string;
+      details?: string;
+    }[];
+  };
   eventiSection: {
     badge: string;
     title: string;
@@ -180,6 +233,10 @@ export interface TranslationDictionary {
     ctaBtn: string;
     salaEventiTitle: string;
     salaEventiDescription: string;
+    cateringLogisticaTitle: string;
+    cateringLogisticaDescription: string;
+    tourOperatorTitle: string;
+    tourOperatorDescription: string;
     eventTypes: {
       title: string;
       description: string;
@@ -207,8 +264,10 @@ export interface TranslationDictionary {
       subjectLabel: string;
       subjectOptions: {
         tavolo: string;
+        esperienze: string;
         evento: string;
         arte: string;
+        store: string;
         informazioni: string;
       };
       dateLabel: string;

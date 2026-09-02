@@ -17,13 +17,15 @@ export const enTranslations: TranslationDictionary = {
   },
   navbar: {
     home: "Home",
-    carta: "The Menu & Bar",
+    about: "About Us",
+    carta: "Flavors",
     menu: "Menu",
     cocktailBar: "Cocktail Bar",
     caffetteria: "Cafeteria",
     location: "Setting",
     experiences: "Experiences",
-    spazioArte: "Art Space",
+    spazioArte: "Art",
+    store: "Store",
     eventi: "Events",
     contattaci: "Contact Us",
     book: "Book",
@@ -34,122 +36,73 @@ export const enTranslations: TranslationDictionary = {
   hero: {
     badge: "Antico Bistrot Siciliano · Municipal Theatre of Syracuse",
     headline: "A timeless sanctuary where historical charm meets warm Sicilian hospitality.",
-    tributeTitle: "Tribute to Giuseppe Damiani Almeyda (1834 - 1911)",
-    tributeParagraph1: "We decided to pay tribute to one of the most celebrated architects in Sicily between the second half of the 19th century and the early 20th century, Giuseppe Damiani Almeyda (1834 - 1911).",
-    tributeParagraph2: "Crossing the threshold of Almeyda means stepping into a place suspended in time, where the allure of history embraces the warmth of true hospitality.",
-    tributeParagraph3: "You are inside the Municipal Theatre of Syracuse, in the authentic heart of Ortigia: a sanctuary guarding memory, art, and beauty, today welcoming you to a sensory journey that captivates all five senses.",
-    tributeParagraph4: "An international meeting place, a unique atmosphere, and a dedicated events hall make Almeyda an authentic Antico Bistrot Siciliano.",
-    tributeParagraph5: "All our creations are homemade, mindful of seasonality and genuine flavors. Fine wines and curated olive oils, warm crisp baguettes, and above all, love and imagination.",
     bookCta: "Book a Table",
-    menuCta: "Discover the Menu",
+    menuCta: "Discover the Flavors",
     scrollHint: "Scroll to explore"
   },
   menuSection: {
-    badge: "Authentic Flavors & Heritage",
-    title: "Menu",
-    subtitle: "Fresh homemade delicacies, seasonal produce, and true Sicilian soul.",
-    description: "Every item is handcrafted with passion: artisanal cheese and charcuterie boards, warm fragrant baguettes, traditional first and second courses, and classic desserts paired with our curated olive oils and regional wines.",
-    exploreMenuBtn: "View Full Menu",
-    featuredBadge: "House Specialty",
-    categories: {
-      all: "All Dishes",
-      baguette: "Warm Baguettes & Bites",
-      antipasti: "Starters & Boards",
-      primi: "Traditional Pasta",
-      secondi: "Mains & Daily Catch",
-      dessert: "Desserts & Pastry",
-      viniOli: "Curated Oils & Wines"
-    },
-    dishes: [
+    badge: "Homemade & Authentic Flavors",
+    title: "Flavors",
+    subtitle: "Discover our homemade menu, come visit us.",
+    description: "All our creations are homemade, mindful of seasonality and genuine flavors: warm fragrant baguettes, noble tasting boards, traditional pasta, artisan pastries, fine oils and wines prepared with passion and flair.",
+    exploreMenuBtn: "Come Visit Us",
+    visitCta: "Discover our homemade menu, come visit us.",
+    gallery: [
       {
-        id: "m-1",
-        name: "Warm Baguette Ortigia",
-        category: "baguette",
-        description: "Freshly baked artisan baguette with Sicilian capocollo, fresh stracciatella cheese, confit datterini tomatoes, and Monti Iblei extra virgin olive oil.",
-        price: "€ 11.00",
-        image: "https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1000&auto=format&fit=crop",
-        notes: "Artisanal preparation · Served warm",
-        featured: true
+        id: "g-1",
+        title: "Warm Artisan Baguettes",
+        description: "Freshly baked artisan baguettes filled with Sicilian capocollo, local tuna, stracciatella, and Iblean olive oil.",
+        imageUrl: "https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1000&auto=format&fit=crop",
+        highlight: "Freshly Baked"
       },
       {
-        id: "m-2",
-        name: "Theatre Warm Baguette",
-        category: "baguette",
-        description: "Crisp warm baguette with homemade preserved red tuna, caramelized Giarratana sweet onion, Salina capers, and Syracuse lemon zest.",
-        price: "€ 13.00",
-        image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=1000&auto=format&fit=crop",
-        notes: "Signature house recipe",
-        featured: true
+        id: "g-2",
+        title: "Antico Bistrot Tasting Boards",
+        description: "Noble selection of raw-milk historic Sicilian cheeses, artisanal cured meats, and organic preserves.",
+        imageUrl: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=1000&auto=format&fit=crop",
+        highlight: "Local Excellence"
       },
       {
-        id: "m-3",
-        name: "Antico Bistrot Tasting Board",
-        category: "antipasti",
-        description: "Noble selection of raw-milk historic Sicilian cheeses (Ragusano DOP, Piacentinu Ennese), black swine cured meats, organic preserves, and warm wood-fired bread.",
-        price: "€ 22.00",
-        image: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=1000&auto=format&fit=crop",
-        notes: "Ideal for two to share",
-        featured: true
+        id: "g-3",
+        title: "Fresh Handmade Pasta",
+        description: "Bronze-extruded homemade pasta with slow-simmered datterino tomatoes, wild fennel, and fragrant Sicilian aromatics.",
+        imageUrl: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=1000&auto=format&fit=crop",
+        highlight: "Handcrafted"
       },
       {
-        id: "m-4",
-        name: "Historic Caponata with Noto Almonds",
-        category: "antipasti",
-        description: "Golden fried eggplants, crunchy celery, Nocellara olives from Mount Etna, toasted pine nuts, and local wildflower honey vinegar reduction.",
-        price: "€ 12.00",
-        image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1000&auto=format&fit=crop",
-        notes: "Timeless recipe",
-        featured: false
+        id: "g-4",
+        title: "Daily Catch & Seasonal Dishes",
+        description: "Fresh daily catch from the harbor of Syracuse and selected seasonal produce.",
+        imageUrl: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=1000&auto=format&fit=crop",
+        highlight: "Fresh Catch"
       },
       {
-        id: "m-5",
-        name: "Ancient Grain Busiate alla Siracusana",
-        category: "primi",
-        description: "Bronze-die fresh pasta with slow-cooked sweet datterino tomatoes, Sciacca anchovies, wild fennel, and crunchy toasted breadcrumbs.",
-        price: "€ 16.00",
-        image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=1000&auto=format&fit=crop",
-        notes: "Organic ancient Sicilian grains",
-        featured: true
+        id: "g-5",
+        title: "Homemade Pastry & Desserts",
+        description: "Crispy cannoli with fresh sheep's milk ricotta, pure green pistachio creams, and timeless desserts.",
+        imageUrl: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1000&auto=format&fit=crop",
+        highlight: "House Pastry"
       },
       {
-        id: "m-6",
-        name: "Ricotta & Saffron Handcrafted Tortelli",
-        category: "primi",
-        description: "Handmade pasta parcels filled with fresh sheep's milk ricotta from the Iblei hills, herb-infused butter, and pure Sicilian saffron.",
-        price: "€ 17.00",
-        image: "https://images.unsplash.com/photo-1587740908075-9e245070dfaa?q=80&w=1000&auto=format&fit=crop",
-        notes: "Fresh egg pasta",
-        featured: false
+        id: "g-6",
+        title: "Artisanal Cocktail Bar",
+        description: "Art Nouveau inspired drinks, Syracuse citrus, island botanical essences, and balanced rare spirits.",
+        imageUrl: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1000&auto=format&fit=crop",
+        highlight: "Signature Mixology"
       },
       {
-        id: "m-7",
-        name: "Catch of the Day all'Acqua Pazza",
-        category: "secondi",
-        description: "Fresh fish fillet from Syracuse harbor, gently cooked in a fragrant broth of Pachino cherry tomatoes, Nubia red garlic, and fresh basil.",
-        price: "€ 24.00",
-        image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=1000&auto=format&fit=crop",
-        notes: "Local sustainable catch",
-        featured: true
+        id: "g-7",
+        title: "Curated Oils & Wine Cellar",
+        description: "Single-cultivar Sicilian olive oils, organic wines, and volcanic pours from Etna and Val di Noto.",
+        imageUrl: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1000&auto=format&fit=crop",
+        highlight: "Oils & Wines"
       },
       {
-        id: "m-8",
-        name: "Deconstructed Cannolo with Iblean Ricotta",
-        category: "dessert",
-        description: "Crisp fried cinnamon pastry shards, velvety sweetened sheep's milk ricotta cream, Modica dark chocolate drops, and Bronte pistachios.",
-        price: "€ 8.00",
-        image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1000&auto=format&fit=crop",
-        notes: "Prepared to order",
-        featured: true
-      },
-      {
-        id: "m-9",
-        name: "Curated Oils & Wine Flight",
-        category: "viniOli",
-        description: "Guided tasting flight featuring three monovarietal extra virgin olive oils (Tonda Iblea, Nocellara, Biancolilla) and select volcanic wines.",
-        price: "€ 18.00",
-        image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1000&auto=format&fit=crop",
-        notes: "Organic & biodynamic labels",
-        featured: true
+        id: "g-8",
+        title: "Cafeteria & Historic Foyer",
+        description: "Traditional espresso, whole leaf teas, artisan granitas, and peaceful moments in the Theatre.",
+        imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop",
+        highlight: "Historic Setting"
       }
     ]
   },
@@ -299,10 +252,51 @@ export const enTranslations: TranslationDictionary = {
   locationSection: {
     badge: "In the Heart of Ortigia",
     title: "Setting",
-    subtitle: "Inside the magnificent Municipal Theatre of Syracuse.",
-    description: "Stepping inside Almeyda means entering a historic monument guarding memories, art, and timeless aesthetics. Designed by 19th-century masters, it is the quintessential setting for a Sicilian bistrot.",
-    theatreTitle: "The Municipal Theatre of Syracuse",
-    theatreDescription: "Inaugurated at the close of the 19th century in Ortigia, the Theatre is an architectural masterpiece. Almeyda breathes in harmony with its historic halls, offering an intimate period salon and an elegant outdoor terrace.",
+    subtitle: "Inside the evocative halls of the Municipal Theatre of Syracuse.",
+    description: "Located in the heart of the historic center, on the island of Ortigia and within the evocative halls of the Municipal Theatre of Syracuse. Almeyda and the Teatro Massimo, paying tribute to one of the most celebrated figures in Sicilian architectural history between the late 19th and early 20th centuries, Giuseppe Damiani Almeyda (1834 - 1911).",
+    theatreTitle: "The Municipal Theatre & Giuseppe Damiani Almeyda",
+    theatreDescription: "Located in the heart of the historic center, on the island of Ortigia and within the evocative halls of the Municipal Theatre of Syracuse. Almeyda and the Teatro Massimo, paying tribute to one of the most celebrated figures in Sicilian architectural history between the late 19th and early 20th centuries, Giuseppe Damiani Almeyda (1834 - 1911).",
+    tributeText: "Located in the heart of the historic center, on the island of Ortigia and within the evocative halls of the Municipal Theatre of Syracuse. Almeyda and the Teatro Massimo, paying tribute to one of the most celebrated figures in Sicilian architectural history between the late 19th and early 20th centuries, Giuseppe Damiani Almeyda (1834 - 1911).",
+    roomsTitle: "The Halls & Historical Spaces of the Theatre",
+    roomsSubtitle: "A journey through six iconic rooms celebrating Art Nouveau charm, architecture, and live culture",
+    rooms: [
+      {
+        name: "Sala Liberty",
+        description: "Floral elegance, antique wrought iron details, refined period decor, and warm ambient light.",
+        iconName: "Sparkles",
+        tag: "Art Nouveau Charm"
+      },
+      {
+        name: "Salone delle Arti",
+        description: "The majestic hall dedicated to art exhibitions, vernissages, cultural salons, and noble gatherings.",
+        iconName: "Palette",
+        tag: "Exhibitions & Art"
+      },
+      {
+        name: "Passa Carrozza",
+        description: "The ancient carriage passageway preserving the romantic memory of historical coaches and Ortigia's soul.",
+        iconName: "Compass",
+        tag: "Historic Gateway"
+      },
+      {
+        name: "Foyer",
+        description: "The sumptuous theatre entrance foyer, ideal for morning coffee, reading, or an evening aperitivo.",
+        iconName: "Landmark",
+        tag: "Period Foyer"
+      },
+      {
+        name: "Sala prove",
+        description: "An intimate and creative chamber where art takes shape through musical notes and rehearsals.",
+        iconName: "Music",
+        tag: "Rehearsals & Music"
+      },
+      {
+        name: "Il Palco",
+        description: "The theatrical stage, the heart of emotion, live performances, and unforgettable evenings.",
+        iconName: "Theater",
+        tag: "Stage & Live"
+      }
+    ],
     addressTitle: "Address & How to Reach Us",
     hoursTitle: "Opening Hours",
     directionsBtn: "Get Directions on Map",
@@ -313,32 +307,144 @@ export const enTranslations: TranslationDictionary = {
     ],
     gallery: [
       {
-        title: "The Historic Facade",
-        caption: "The Municipal Theatre of Syracuse, Ortigia's architectural crown jewel.",
-        imageUrl: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop"
+        title: "Live Jazz & Double Bass Sessions",
+        caption: "Live jazz notes and soulful improvisations in the warm, evocative atmosphere of the bistrot.",
+        imageUrl: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=1200&auto=format&fit=crop"
       },
       {
-        title: "The Antico Bistrot Salon",
-        caption: "Curated vintage furnishings, golden lighting, and historic ceilings.",
-        imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop"
+        title: "The Grand Piano",
+        caption: "Classical chords and intimate melodies accompanying evening aperitifs at the theatre.",
+        imageUrl: "https://images.unsplash.com/photo-1513883049090-d0b7439799bf?q=80&w=1200&auto=format&fit=crop"
       },
       {
-        title: "The Mixology Bar",
-        caption: "Dedicated corner for artisanal cocktail craft and rare spirit collections.",
-        imageUrl: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1200&auto=format&fit=crop"
+        title: "Art Exhibitions & Gallery Walls",
+        caption: "Contemporary paintings and artworks exhibited along the historic stone arches.",
+        imageUrl: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1200&auto=format&fit=crop"
       },
       {
-        title: "Ortigia Terrace",
-        caption: "Outdoor tables set between white limestone alleys and the sea breeze.",
-        imageUrl: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop"
+        title: "Saxophone & Swing Nights",
+        caption: "Soulful saxophone solos and swing rhythms amidst soft lighting and vintage decor.",
+        imageUrl: "https://images.unsplash.com/photo-1525994886773-080587e161c2?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Vernissages & Art Gatherings",
+        caption: "Artful toasts connecting artists, collectors, and culture lovers during openings.",
+        imageUrl: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Acoustic Set & Live Guitar",
+        caption: "Unplugged performances and intimate songwriting in the heart of the Ridotto hall.",
+        imageUrl: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Vinyl Corner & Sound Selection",
+        caption: "33-rpm analog vinyl records and artisanal cocktails shaken to the rhythm of sound.",
+        imageUrl: "https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Vocal Jazz & Retro Mic",
+        caption: "Vintage vocal echoes and timeless jazz standards performed live on vintage microphones.",
+        imageUrl: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Sculptures & Foyer Installations",
+        caption: "Artistic sculptures and three-dimensional works harmonized with theatre architecture.",
+        imageUrl: "https://images.unsplash.com/photo-1561214115-f2f134cc4912?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Trumpet & Late Night Sessions",
+        caption: "Brass brilliance and musical dialogues in the theatre's late-night lounge.",
+        imageUrl: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Art Details & Exhibited Canvases",
+        caption: "Textured brushwork, rich pigments, and rotating exhibitions displayed between tables.",
+        imageUrl: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Chamber Music & Strings",
+        caption: "Chamber music moments resonating within the flawless acoustics of the historic halls.",
+        imageUrl: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Fine Art Ceramics & Sculptures",
+        caption: "Unique hand-crafted pieces and artisan glazes showcased in Art Nouveau corners.",
+        imageUrl: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Fine Wine & Sound Atmosphere",
+        caption: "Etna wine tastings and homemade delicacies accompanied by curated acoustic ambiance.",
+        imageUrl: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Live Performances & Art Stage",
+        caption: "The vibrant energy of intimate concerts and cultural evenings at the Municipal Theatre.",
+        imageUrl: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        title: "Night of Notes in Ortigia",
+        caption: "The bistrot's warm lanterns with enchanting music echoing through ancient alleys.",
+        imageUrl: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1200&auto=format&fit=crop"
       }
     ]
+  },
+  aboutSection: {
+    badge: "Heritage, Vision & Hospitality",
+    title: "About Us & The Vision",
+    subtitle: "An Antico Arts Café Bistrot in the heart of the Municipal Theatre of Syracuse.",
+    aboutTitle: "Our Story",
+    aboutText1: "A group of young entrepreneurs from different sectors: hospitality, gastronomy, the sea, and music—the unique specialty of each of us.",
+    aboutText2: "Together, a vision rooted in iconic places where we bring our business dreams to life, along with the dreams of our valued guests.",
+    ideaTitle: "The Concept: An Antico Arts Café Bistrot",
+    ideaSubtitle: "A place to study, read, get married, dine, and listen to great music.",
+    ideaQuote: "Above all, to create atmosphere and well-being: pairing our culinary journeys with a complete, immersive sensory experience.",
+    ideaPoints: [
+      {
+        title: "Crossroads for Artists",
+        description: "A gathering point and safe haven for all passing artists and performers.",
+        iconName: "Palette"
+      },
+      {
+        title: "Art, Craft & Theatre",
+        description: "Bringing art exhibitions and craft showcases to life, connecting youth with the magic of the theatre.",
+        iconName: "Sparkles"
+      },
+      {
+        title: "Iconic Landmark",
+        description: "Becoming a cultural and gastronomic reference point for travelers and Syracuse locals alike.",
+        iconName: "Compass"
+      },
+      {
+        title: "Bespoke Regional Events",
+        description: "Sharing our distinctive mood and authentic culinary creations for unique events across Sicily.",
+        iconName: "HeartHandshake"
+      }
+    ],
+    offerTitle: "Our Multifaceted Offering",
+    offerSubtitle: "From a casual daytime stop to exclusive Food & Wine Experiences",
+    offerText1: "Versatile and multifaceted, our offering ranges from a simple daytime pause to savor our cuisine and drinks, to curated, exclusive Food and Wine Experiences.",
+    offerText2: "A captivating atmosphere, a multicultural spirit, and refined musical selections stop time and immerse you in a tale of bygone eras.",
+    staffTitle: "The Team",
+    staffSubtitle: "The clock that sets the tempo of your well-being",
+    staffQuote: "Names may shift over time, but we remain the clock that marks the rhythm of your well-being.",
+    staffMembers: [
+      { role: "Direction", name: "Barbara", iconName: "Clapperboard", department: "General Direction & Vision" },
+      { role: "Hospitality", name: "Mabel", iconName: "Heart", department: "Guest Welcome & Front of House" },
+      { role: "Beverage", name: "Roberta", iconName: "Wine", department: "Mixology & Cellar" },
+      { role: "Pass", name: "Syria", iconName: "Flame", department: "Service Coordination" },
+      { role: "Laboratory", name: "Simone", iconName: "Sparkles", department: "Research & Production" },
+      { role: "Chef", name: "Enrico", iconName: "UtensilsCrossed", department: "Cuisine & Terroir" },
+      { role: "Maintenance", name: "Malboro", iconName: "Wrench", department: "Care & Structural Upkeep" }
+    ],
+    languagesLabel: "We Speak",
+    languages: ["Italian", "English", "Spanish", "Portuguese", "French"]
   },
   experiencesSection: {
     badge: "Engaging All Five Senses",
     title: "Experiences",
     subtitle: "Custom-curated culinary, sensory, and cultural journeys.",
     description: "Every experience at Almeyda is crafted to unveil the deep essence of Sicily: from premium extra virgin olive oil flights to volcanic wine pairings and private cocktail sessions.",
+    offerAtmosphere: "Versatile and multifaceted, our offering spans from a relaxing daytime stop to enjoy food and drinks, to exclusive Food & Wine Experiences with musical selections that stand the test of time.",
     bookBtn: "Inquire About Experience",
     items: [
       {
@@ -404,33 +510,135 @@ export const enTranslations: TranslationDictionary = {
       }
     ]
   },
+  storeSection: {
+    badge: "Boutique & Sicilian Craftsmanship",
+    title: "Store",
+    subtitle: "Bring home the authentic flavors and artisan heritage of Sicily.",
+    description: "A master selection of Sicilian excellence: single-cultivar extra virgin olive oils from the Iblean mountains, homemade preserves and pestos, volcanic natural wines, hand-painted ceramics, and exclusive Theatre gift sets.",
+    inStoreNotice: "All items are available for purchase and direct collection at our Bistrot in the Theatre, with elegant gift boxes and travel packaging.",
+    ctaWhatsapp: "Order or Inquire via WhatsApp",
+    ctaInquire: "Inquire for Shipping & Gift Boxes",
+    categories: {
+      all: "All Products",
+      oli: "Monovarietal Oils",
+      dispensa: "Pantry & Preserves",
+      vini: "Wines & Spirits",
+      ceramiche: "Ceramics & Art"
+    },
+    products: [
+      {
+        id: "prod-1",
+        title: "Monocultivar Tonda Iblea Extra Virgin Olive Oil",
+        category: "oli",
+        description: "Cold-extracted from century-old Iblean olive groves. Intense aromas of green tomato leaf, wild Mediterranean herbs, and artichoke. Numbered seal.",
+        origin: "Buccheri / Monti Iblei (SR)",
+        tag: "Sicilian Excellence",
+        imageUrl: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=1000&auto=format&fit=crop",
+        details: "500ml dark glass bottle · Acidity < 0.18%"
+      },
+      {
+        id: "prod-2",
+        title: "Organic Nocellara dell'Etna Extra Virgin Olive Oil",
+        category: "oli",
+        description: "Extra virgin olive oil from volcanic volcanic slopes, harmonious and refined with fresh almond notes, green apple, and pleasant peppery finish.",
+        origin: "Slopes of Mount Etna",
+        tag: "Organic & Volcanic",
+        imageUrl: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1000&auto=format&fit=crop",
+        details: "500ml bottle · Hand-harvested 2025"
+      },
+      {
+        id: "prod-3",
+        title: "Historic Sicilian Caponata Almeyda",
+        category: "dispensa",
+        description: "Handcrafted in our kitchen according to the ancestral recipe: golden eggplants, toasted Noto almonds, Nocellara olives, and orange honey sweet-and-sour reduction.",
+        origin: "Homemade Almeyda",
+        tag: "Traditional Recipe",
+        imageUrl: "https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1000&auto=format&fit=crop",
+        details: "314g glass jar · 100% Artisanal"
+      },
+      {
+        id: "prod-4",
+        title: "Pure Bronte DOP Pistachio Cream",
+        category: "dispensa",
+        description: "Artisan spread made with 65% stone-toasted green pistachios from Bronte DOP, with no artificial flavors or palm oil.",
+        origin: "Bronte (CT)",
+        tag: "65% Pure Pistachio",
+        imageUrl: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1000&auto=format&fit=crop",
+        details: "200g jar · Bronte DOP"
+      },
+      {
+        id: "prod-5",
+        title: "Etna Rosso DOC Contrada & Carricante",
+        category: "vini",
+        description: "Selection of wines from bush-trained old vines on volcanic sands. Vibrant minerality, wild red berry notes, and balsamic finish.",
+        origin: "Etna North Slope",
+        tag: "Artisan Cellar",
+        imageUrl: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1000&auto=format&fit=crop",
+        details: "75cl bottle · French oak maturation"
+      },
+      {
+        id: "prod-6",
+        title: "Etna Herbal Amaro & Syracuse Citrus Liqueurs",
+        category: "vini",
+        description: "Artisanal infusion of wild Mediterranean herbs and Syracuse IGP Lemon and bitter orange peels.",
+        origin: "Syracuse & Etna",
+        tag: "Botanical Spirit",
+        imageUrl: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1000&auto=format&fit=crop",
+        details: "50cl / 70cl bottle · Secret family recipe"
+      },
+      {
+        id: "prod-7",
+        title: "Lucky Sicilian Pumo & Caltagirone Ceramics",
+        category: "ceramiche",
+        description: "Authentic Sicilian ceramics hand-molded and glazed in warm ochre, copper green, and cobalt blue tones by master potters.",
+        origin: "Caltagirone & Ortigia",
+        tag: "Handcrafted",
+        imageUrl: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=1000&auto=format&fit=crop",
+        details: "Unique numbered piece · Glazed clay"
+      },
+      {
+        id: "prod-8",
+        title: "Gift Box 'Memories of the Municipal Theatre'",
+        category: "dispensa",
+        description: "Elegant wooden box with Almeyda wax seal containing a bottle of premium EVO, two artisanal preserves, volcanic wine, and calligraphic message.",
+        origin: "Exclusive Almeyda Selection",
+        tag: "Gift Set",
+        imageUrl: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=1000&auto=format&fit=crop",
+        details: "Customizable box · Ideal for distinguished gifting"
+      }
+    ]
+  },
   eventiSection: {
     badge: "Unforgettable Theatre Moments",
-    title: "Events",
-    subtitle: "Our private events hall and historic spaces for your memorable occasions.",
-    description: "An international meeting place, a unique atmosphere, and a dedicated events hall make Almeyda a prestigious backdrop for private receptions, live acoustic music, art vernissages, and company gatherings.",
-    ctaBtn: "Inquire for Hall Availability",
+    title: "Events & Catering",
+    subtitle: "Our private events hall, logistics, and styling for your special occasions.",
+    description: "The ideal setting for exclusive parties, milestones, corporate meetings, and weddings. We provide full catering excellence, bespoke styling, and flawless logistics.",
+    ctaBtn: "Inquire for Hall & Catering",
     salaEventiTitle: "The Private Events Hall",
     salaEventiDescription: "A captivating salon with exceptional acoustics, bespoke lighting, dedicated catering, and private bar counter to host your guests in absolute elegance and discretion.",
+    cateringLogisticaTitle: "Catering, Styling & Logistics",
+    cateringLogisticaDescription: "We curate every nuance of your weddings, corporate meetings, and private celebrations: tailor-made menus, floral decor, audio-lighting services, and seamless logistics.",
+    tourOperatorTitle: "Collaboration with Agencies & Tour Operators",
+    tourOperatorDescription: "We actively partner with Travel Agencies and Tour Operators for any client requirement, delivering indoor services in the Theatre and outdoor experiences across Sicily.",
     eventTypes: [
       {
-        title: "Private Receptions & Celebrations",
-        description: "Intimate birthdays, anniversaries, and milestones with custom culinary menus and cocktail pairings.",
+        title: "Weddings & Milestones",
+        description: "Intimate weddings, anniversaries, and unforgettable celebrations with bespoke catering in the heart of Ortigia.",
         iconName: "PartyPopper"
       },
       {
-        title: "Live Music & Cultural Performances",
-        description: "Live jazz nights, acoustic sessions, and literary encounters within the historic Theatre.",
-        iconName: "Music"
+        title: "Exclusive Parties & Receptions",
+        description: "Private gatherings featuring custom cocktail menus, selected music, and timeless historic atmosphere.",
+        iconName: "Sparkles"
       },
       {
-        title: "Corporate Gatherings & Presentations",
-        description: "Fully equipped venue for brand showcases, executive meetings, press launches, and wine presentations.",
+        title: "Corporate Meetings & B2B",
+        description: "Equipped venue and logistics for corporate conventions, brand launches, and services for tour operators.",
         iconName: "Users"
       },
       {
-        title: "Art Exhibitions & Vernissages",
-        description: "Temporary exhibitions of painting, sculpture, and photography interacting with period architecture.",
+        title: "Art Exhibitions & Live Music",
+        description: "Temporary exhibitions, live acoustic concerts, and cultural gatherings interacting with period architecture.",
         iconName: "Palette"
       }
     ]
@@ -456,8 +664,10 @@ export const enTranslations: TranslationDictionary = {
       subjectLabel: "Inquiry Type",
       subjectOptions: {
         tavolo: "Table Reservation (Lunch / Dinner / Drinks)",
-        evento: "Private Event Organization",
+        esperienze: "Tastings & Sensory Experiences",
+        evento: "Private Events, Catering & B2B",
         arte: "Artistic Proposal / Art Space",
+        store: "Boutique Store & Shipping",
         informazioni: "General Information Inquiry"
       },
       dateLabel: "Preferred Date",

@@ -7,7 +7,7 @@ import { useLightbox } from '../context/LightboxContext';
 import { LightboxImage } from '../types';
 
 interface ArtSpaceSectionProps {
-  onOpenArtInquiry?: () => void;
+  onOpenArtInquiry?: (message?: string) => void;
 }
 
 export const ArtSpaceSection: React.FC<ArtSpaceSectionProps> = ({ onOpenArtInquiry }) => {
@@ -41,7 +41,7 @@ export const ArtSpaceSection: React.FC<ArtSpaceSectionProps> = ({ onOpenArtInqui
 
   const handleArtistClick = () => {
     if (onOpenArtInquiry) {
-      onOpenArtInquiry();
+      onOpenArtInquiry("Desidero presentare una proposta artistica / candidatura per esporre o esibirmi presso lo Spazio all'Arte Almeyda.");
     } else {
       const contactEl = document.getElementById('contattaci');
       if (contactEl) {

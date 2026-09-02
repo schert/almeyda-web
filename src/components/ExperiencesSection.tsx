@@ -4,7 +4,7 @@ import { useTranslation } from '../context/LanguageContext';
 import { Sparkles, Wine, Utensils, Compass } from 'lucide-react';
 
 interface ExperiencesSectionProps {
-  onOpenReservation: () => void;
+  onOpenReservation?: (message?: string) => void;
 }
 
 export const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({ onOpenReservation }) => {
@@ -87,8 +87,8 @@ export const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({ onOpenRe
                   {exp.duration}
                 </span>
                 <button
-                  onClick={onOpenReservation}
-                  className="text-[#D4AF37] group-hover:text-white text-[11px] uppercase tracking-[0.18em] font-semibold transition-colors flex items-center space-x-1"
+                  onClick={() => onOpenReservation?.(`Desidero richiedere la prenotazione per l'esperienza: "${exp.title}" (${exp.duration} - ${exp.subtitle}).`)}
+                  className="text-[#D4AF37] group-hover:text-white text-[11px] uppercase tracking-[0.18em] font-semibold transition-colors flex items-center space-x-1 cursor-pointer"
                 >
                   <span>{t.experiencesSection.bookBtn}</span>
                   <span>→</span>

@@ -1,22 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from '../context/LanguageContext';
-import { MapPin, Phone, MessageCircle, Mail, Clock, Send, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Mail, Clock, Send, CheckCircle2, Calendar, Users, Sparkles } from 'lucide-react';
 import { businessConfig } from '../config/almeydaConfig';
+import { ContactSubject } from '../config/translations/types';
 
-export const ContactSection: React.FC = () => {
+export interface ContactSectionProps {
+  selectedSubject?: ContactSubject;
+  prefilledMessage?: string;
+  onSubjectChange?: (subject: ContactSubject) => void;
+}
+
+export const ContactSection: React.FC<ContactSectionProps> = ({
+  selectedSubject = 'tavolo',
+  prefilledMessage = '',
+  onSubjectChange
+}) => {
   const { t } = useTranslation();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    subject: 'tavolo' as 'tavolo' | 'evento' | 'informazioni',
+    subject: selectedSubject as ContactSubject,
     date: '',
     time: '20:00',
     guests: '2',
-    message: ''
+    message: prefilledMessage
   });
+
+  // Aggiorna lo stato del form se cambiano i parametri di navigazione
+  useEffect(() => {
+    if (selectedSubject) {
+      setFormData((prev) => ({
+        ...prev,
+        subject: selectedSubject,
+        message: prefilledMessage || prev.message
+      }));
+      setIsSubmitted(false);
+    }
+  }, [selectedSubject, prefilledMessage]);
+
+  const handleSubjectSelect = (subj: ContactSubject) => {
+    setFormData((prev) => ({ ...prev, subject: subj }));
+    if (onSubjectChange) {
+      onSubjectChange(subj);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,14 +54,33 @@ export const ContactSection: React.FC = () => {
   };
 
   const handleWhatsAppDirect = () => {
-    const text = encodeURIComponent(
-      `Salve Almeyda, vorrei informazioni o prenotare per ${formData.name ? formData.name : 'un tavolo'}. Data: ${formData.date || 'a breve'}, Persone: ${formData.guests}.`
-    );
-    window.open(`https://wa.me/${businessConfig.whatsappNumber}?text=${text}`, '_blank');
+    const subjectLabel = t.contattaciSection.form.subjectOptions[formData.subject] || formData.subject;
+    let details = `Salve Almeyda! Richiesta per: ${subjectLabel}.\nNome: ${formData.name || 'Ospite'}`;
+    if (formData.phone) details += `\nTelefono: ${formData.phone}`;
+    if (formData.email) details += `\nEmail: ${formData.email}`;
+    if (['tavolo', 'esperienze', 'evento'].includes(formData.subject)) {
+      if (formData.date) details += `\nData desiderata: ${formData.date}`;
+      if (formData.time) details += `\nOrario: ${formData.time}`;
+      if (formData.guests) details += `\nNumero ospiti: ${formData.guests}`;
+    }
+    if (formData.message) details += `\nMessaggio / Note: ${formData.message}`;
+
+    window.open(`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent(details)}`, '_blank');
   };
 
+  const subjectOptions: { id: ContactSubject; label: string }[] = [
+    { id: 'tavolo', label: t.contattaciSection.form.subjectOptions.tavolo },
+    { id: 'esperienze', label: t.contattaciSection.form.subjectOptions.esperienze },
+    { id: 'evento', label: t.contattaciSection.form.subjectOptions.evento },
+    { id: 'arte', label: t.contattaciSection.form.subjectOptions.arte },
+    { id: 'store', label: t.contattaciSection.form.subjectOptions.store },
+    { id: 'informazioni', label: t.contattaciSection.form.subjectOptions.informazioni }
+  ];
+
+  const requiresBookingDetails = ['tavolo', 'esperienze', 'evento'].includes(formData.subject);
+
   return (
-    <section id="contattaci" className="py-24 md:py-32 bg-[#0E1013] text-[#F5F2ED] relative border-t border-white/5">
+    <section id="contattaci" className="py-24 md:py-32 bg-[#0E1013] text-[#F5F2ED] relative border-t border-white/5 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Intestazione Sezione */}
@@ -59,37 +108,38 @@ export const ContactSection: React.FC = () => {
                 Recapiti & Informazioni
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-6 text-sm">
+                
                 {/* Indirizzo */}
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-full border border-[#D4AF37]/30 bg-[#0A0B0D] flex items-center justify-center shrink-0">
-                    <MapPin className="w-4 h-4 text-[#D4AF37]" />
+                    <MapPin className="w-5 h-5 text-[#D4AF37]" />
                   </div>
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] font-semibold mb-1">
+                    <span className="text-[10px] uppercase tracking-wider text-white/50 block font-mono">
                       {t.contattaciSection.addressLabel}
-                    </h4>
-                    <p className="text-white/90 text-sm font-light leading-relaxed">
+                    </span>
+                    <p className="font-serif text-base text-[#F5F2ED] font-medium">
                       {businessConfig.address}
                     </p>
-                    <p className="text-white/50 text-xs">
+                    <p className="text-xs text-white/60 mt-0.5">
                       {businessConfig.addressNote}
                     </p>
                   </div>
                 </div>
 
-                {/* Telefono Diretto */}
+                {/* Telefono */}
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-full border border-[#D4AF37]/30 bg-[#0A0B0D] flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4 text-[#D4AF37]" />
+                    <Phone className="w-5 h-5 text-[#D4AF37]" />
                   </div>
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] font-semibold mb-1">
+                    <span className="text-[10px] uppercase tracking-wider text-white/50 block font-mono">
                       {t.contattaciSection.phoneLabel}
-                    </h4>
+                    </span>
                     <a
                       href={`tel:${businessConfig.phone}`}
-                      className="text-white/90 hover:text-[#D4AF37] text-sm font-serif transition-colors"
+                      className="font-mono text-base text-[#D4AF37] hover:underline"
                     >
                       {businessConfig.phoneDisplay}
                     </a>
@@ -98,18 +148,19 @@ export const ContactSection: React.FC = () => {
 
                 {/* WhatsApp */}
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 rounded-full border border-[#D4AF37]/30 bg-[#0A0B0D] flex items-center justify-center shrink-0">
-                    <MessageCircle className="w-4 h-4 text-[#D4AF37]" />
+                  <div className="w-10 h-10 rounded-full border border-[#25D366]/30 bg-[#0A0B0D] flex items-center justify-center shrink-0">
+                    <MessageCircle className="w-5 h-5 text-[#25D366]" />
                   </div>
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] font-semibold mb-1">
+                    <span className="text-[10px] uppercase tracking-wider text-white/50 block font-mono">
                       {t.contattaciSection.whatsappLabel}
-                    </h4>
+                    </span>
                     <button
                       onClick={handleWhatsAppDirect}
-                      className="text-white/90 hover:text-[#D4AF37] text-sm font-light underline underline-offset-4 transition-colors"
+                      className="text-xs text-[#25D366] hover:underline font-medium inline-flex items-center space-x-1"
                     >
-                      Avvia conversazione WhatsApp
+                      <span>Avvia chat rapida WhatsApp</span>
+                      <span>→</span>
                     </button>
                   </div>
                 </div>
@@ -117,61 +168,71 @@ export const ContactSection: React.FC = () => {
                 {/* Email */}
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-full border border-[#D4AF37]/30 bg-[#0A0B0D] flex items-center justify-center shrink-0">
-                    <Mail className="w-4 h-4 text-[#D4AF37]" />
+                    <Mail className="w-5 h-5 text-[#D4AF37]" />
                   </div>
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] font-semibold mb-1">
+                    <span className="text-[10px] uppercase tracking-wider text-white/50 block font-mono">
                       {t.contattaciSection.emailLabel}
-                    </h4>
+                    </span>
                     <a
                       href={`mailto:${businessConfig.email}`}
-                      className="text-white/90 hover:text-[#D4AF37] text-sm font-light transition-colors"
+                      className="text-sm text-white/80 hover:text-[#D4AF37] transition-colors"
                     >
                       {businessConfig.email}
                     </a>
                   </div>
                 </div>
 
-                {/* Orari di Apertura */}
-                <div className="flex items-start space-x-4">
+                {/* Orari */}
+                <div className="flex items-start space-x-4 pt-4 border-t border-white/5">
                   <div className="w-10 h-10 rounded-full border border-[#D4AF37]/30 bg-[#0A0B0D] flex items-center justify-center shrink-0">
-                    <Clock className="w-4 h-4 text-[#D4AF37]" />
+                    <Clock className="w-5 h-5 text-[#D4AF37]" />
                   </div>
                   <div className="w-full">
-                    <h4 className="text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] font-semibold mb-2">
+                    <span className="text-[10px] uppercase tracking-wider text-white/50 block font-mono mb-2">
                       {t.contattaciSection.hoursLabel}
-                    </h4>
-                    <div className="space-y-1.5 text-xs">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1 border-b border-white/5">
-                        <span className="text-[#F5F2ED] font-medium">Mercoledì — Domenica:</span>
-                        <span className="text-[#D4AF37] font-mono">10:00 — 15:00 | 18:30 — 00:30</span>
-                      </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1 border-b border-white/5">
-                        <span className="text-[#F5F2ED] font-medium">Lunedì:</span>
-                        <span className="text-[#D4AF37] font-mono">12:00 — 15:00 | 19:00 — 23:30</span>
-                      </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1">
-                        <span className="text-[#F5F2ED] font-medium">Martedì:</span>
-                        <span className="text-white/70 italic">Chiuso (Riposo settimanale)</span>
-                      </div>
+                    </span>
+                    <div className="space-y-1.5 text-xs text-white/70">
+                      {t.locationSection.openingHours.map((slot, i) => (
+                        <div key={i} className="flex justify-between items-baseline">
+                          <span>{slot.days}:</span>
+                          <span className="font-mono text-[#F5F2ED]">{slot.hours}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
 
               </div>
             </div>
+
+            {/* Banner prenotazione diretta via WhatsApp */}
+            <div className="p-6 bg-[#0A0B0D] border border-[#D4AF37]/40 text-center">
+              <Sparkles className="w-6 h-6 text-[#D4AF37] mx-auto mb-2" />
+              <h4 className="font-serif text-lg text-white mb-1">Hai bisogno di una risposta immediata?</h4>
+              <p className="text-white/60 text-xs font-light mb-4">
+                Scrivici direttamente su WhatsApp per verificare in tempo reale la disponibilità di tavoli ed eventi.
+              </p>
+              <button
+                onClick={handleWhatsAppDirect}
+                className="w-full py-3 bg-[#25D366] hover:bg-[#20ba5a] text-black font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center space-x-2"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Chatta su WhatsApp</span>
+              </button>
+            </div>
           </div>
 
-          {/* Colonna Destra: Modulo di Richiesta */}
+          {/* Colonna Destra: Modulo di Contatto Interattivo */}
           <div className="lg:col-span-7">
             <div className="bg-[#121418] border border-white/10 p-8 sm:p-10 shadow-2xl relative">
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (
                   <motion.form
-                    key="form"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    key="contact-form"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
                     onSubmit={handleSubmit}
                     className="space-y-6"
                   >
@@ -186,27 +247,27 @@ export const ContactSection: React.FC = () => {
 
                     {/* Selezione Oggetto Richiesta */}
                     <div>
-                      <label className="block text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] mb-2 font-medium">
+                      <label className="block text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] mb-2.5 font-medium">
                         {t.contattaciSection.form.subjectLabel}
                       </label>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {[
-                          { id: 'tavolo', label: t.contattaciSection.form.subjectOptions.tavolo },
-                          { id: 'evento', label: t.contattaciSection.form.subjectOptions.evento },
-                          { id: 'arte', label: t.contattaciSection.form.subjectOptions.arte },
-                          { id: 'informazioni', label: t.contattaciSection.form.subjectOptions.informazioni }
-                        ].map((opt) => (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {subjectOptions.map((opt) => (
                           <button
                             type="button"
                             key={opt.id}
-                            onClick={() => setFormData({ ...formData, subject: opt.id as any })}
-                            className={`p-3 text-left text-xs border transition-all ${
+                            onClick={() => handleSubjectSelect(opt.id)}
+                            className={`p-3 text-left text-xs border transition-all cursor-pointer ${
                               formData.subject === opt.id
-                                ? 'bg-[#D4AF37]/15 border-[#D4AF37] text-white font-medium'
-                                : 'bg-[#0A0B0D] border-white/10 text-white/70 hover:border-white/30'
+                                ? 'bg-[#D4AF37]/15 border-[#D4AF37] text-[#F5F2ED] font-semibold ring-1 ring-[#D4AF37]/50'
+                                : 'bg-[#0A0B0D] border-white/10 text-white/70 hover:border-white/30 hover:text-white'
                             }`}
                           >
-                            {opt.label}
+                            <div className="flex items-center justify-between">
+                              <span>{opt.label}</span>
+                              {formData.subject === opt.id && (
+                                <span className="w-2 h-2 rounded-full bg-[#D4AF37] shrink-0 ml-2" />
+                              )}
+                            </div>
                           </button>
                         ))}
                       </div>
@@ -257,11 +318,11 @@ export const ContactSection: React.FC = () => {
                       />
                     </div>
 
-                    {/* Dati Prenotazione Tavolo o Evento */}
-                    {formData.subject !== 'informazioni' && (
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 bg-[#0A0B0D]/60 border border-white/10">
+                    {/* Dati Prenotazione (Tavolo / Esperienza / Evento) */}
+                    {requiresBookingDetails && (
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 bg-[#0A0B0D]/80 border border-white/10">
                         <div>
-                          <label className="block text-[9px] uppercase tracking-wider text-white/60 mb-1">
+                          <label className="block text-[9px] uppercase tracking-wider text-white/60 mb-1 font-medium">
                             {t.contattaciSection.form.dateLabel}
                           </label>
                           <input
@@ -273,7 +334,7 @@ export const ContactSection: React.FC = () => {
                         </div>
 
                         <div>
-                          <label className="block text-[9px] uppercase tracking-wider text-white/60 mb-1">
+                          <label className="block text-[9px] uppercase tracking-wider text-white/60 mb-1 font-medium">
                             {t.contattaciSection.form.timeLabel}
                           </label>
                           <input
@@ -285,7 +346,7 @@ export const ContactSection: React.FC = () => {
                         </div>
 
                         <div>
-                          <label className="block text-[9px] uppercase tracking-wider text-white/60 mb-1">
+                          <label className="block text-[9px] uppercase tracking-wider text-white/60 mb-1 font-medium">
                             {t.contattaciSection.form.guestsLabel}
                           </label>
                           <select
@@ -293,7 +354,7 @@ export const ContactSection: React.FC = () => {
                             onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
                             className="w-full bg-[#121418] border border-white/15 px-3 py-2 text-xs text-white focus:border-[#D4AF37] focus:outline-none"
                           >
-                            {[1, 2, 3, 4, 5, 6, 7, 8, 10, 15, 20, 30].map((n) => (
+                            {[1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 15, 20, 30, 50].map((n) => (
                               <option key={n} value={n}>
                                 {n} {n === 1 ? 'Persona' : 'Persone'}
                               </option>
@@ -303,7 +364,7 @@ export const ContactSection: React.FC = () => {
                       </div>
                     )}
 
-                    {/* Messaggio */}
+                    {/* Messaggio o Richieste Particolari */}
                     <div>
                       <label className="block text-[10px] uppercase tracking-[0.18em] text-white/70 mb-1.5 font-medium">
                         {t.contattaciSection.form.messageLabel}
@@ -319,7 +380,7 @@ export const ContactSection: React.FC = () => {
 
                     <button
                       type="submit"
-                      className="w-full py-4 bg-[#D4AF37] hover:bg-white text-[#0A0B0D] text-xs font-bold tracking-[0.2em] uppercase transition-all shadow-xl flex items-center justify-center space-x-2"
+                      className="w-full py-4 bg-[#D4AF37] hover:bg-[#E5C158] text-[#0A0B0D] text-xs font-bold tracking-[0.2em] uppercase transition-all shadow-xl flex items-center justify-center space-x-2 cursor-pointer"
                     >
                       <Send className="w-4 h-4" />
                       <span>{t.contattaciSection.form.submitBtn}</span>
@@ -348,7 +409,7 @@ export const ContactSection: React.FC = () => {
                     <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
                       <button
                         onClick={handleWhatsAppDirect}
-                        className="w-full sm:w-auto px-6 py-3 bg-[#25D366] hover:bg-white text-black font-bold text-[11px] tracking-wider uppercase transition-all flex items-center justify-center space-x-2"
+                        className="w-full sm:w-auto px-6 py-3 bg-[#25D366] hover:bg-[#20ba5a] text-black font-bold text-[11px] tracking-wider uppercase transition-all flex items-center justify-center space-x-2 cursor-pointer"
                       >
                         <MessageCircle className="w-4 h-4" />
                         <span>{t.contattaciSection.confirmation.whatsappBtn}</span>
@@ -356,7 +417,7 @@ export const ContactSection: React.FC = () => {
 
                       <button
                         onClick={() => setIsSubmitted(false)}
-                        className="w-full sm:w-auto px-6 py-3 border border-white/20 hover:bg-white hover:text-black text-white text-[11px] tracking-wider uppercase transition-all"
+                        className="w-full sm:w-auto px-6 py-3 border border-white/20 hover:bg-white hover:text-black text-white text-[11px] tracking-wider uppercase transition-all cursor-pointer"
                       >
                         {t.contattaciSection.confirmation.newRequestBtn}
                       </button>
