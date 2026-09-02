@@ -62,33 +62,36 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
   const requiresBookingDetails = ['tavolo', 'esperienze', 'evento'].includes(formData.subject);
 
-  // Genera il testo precompilato WhatsApp strutturato
+  // Genera il testo precompilato WhatsApp strutturato con icone compatibili
   const compiledWhatsAppText = useMemo(() => {
     const subjectLabel = t.contattaciSection.form.subjectOptions[formData.subject] || formData.subject;
     
-    let text = `Salve Almeyda! Desidero mettermi in contatto.\n\n`;
-    text += `📌 *Oggetto*: ${subjectLabel}\n`;
+    let text = `*ALMEYDA - RICHIESTA DI CONTATTO*\n\n`;
+    text += `📍 *Oggetto:* ${subjectLabel}\n`;
+    
     if (formData.name.trim()) {
-      text += `👤 *Nome*: ${formData.name.trim()}\n`;
+      text += `👤 *Nome:* ${formData.name.trim()}\n`;
     }
     if (formData.phone.trim()) {
-      text += `📞 *Telefono*: ${formData.phone.trim()}\n`;
+      text += `📞 *Telefono:* ${formData.phone.trim()}\n`;
     }
 
     if (requiresBookingDetails) {
       if (formData.date) {
-        text += `📅 *Data*: ${formData.date}\n`;
+        const parts = formData.date.split('-');
+        const formattedDate = parts.length === 3 ? `${parts[2]}/${parts[1]}/${parts[0]}` : formData.date;
+        text += `📅 *Data:* ${formattedDate}\n`;
       }
       if (formData.time) {
-        text += `⏰ *Orario*: ${formData.time}\n`;
+        text += `⏰ *Orario:* ${formData.time}\n`;
       }
       if (formData.guests) {
-        text += `👥 *Ospiti*: ${formData.guests} ${Number(formData.guests) === 1 ? 'persona' : 'persone'}\n`;
+        text += `👥 *Ospiti:* ${formData.guests} ${Number(formData.guests) === 1 ? 'persona' : 'persone'}\n`;
       }
     }
 
     if (formData.message.trim()) {
-      text += `\n💬 *Note / Richiesta*: ${formData.message.trim()}\n`;
+      text += `\n💬 *Note / Dettagli:*\n${formData.message.trim()}\n`;
     }
 
     return text;
