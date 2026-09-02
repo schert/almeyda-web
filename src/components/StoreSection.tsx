@@ -74,7 +74,7 @@ export const StoreSection: React.FC<StoreSectionProps> = ({ onOpenInquiry }) => 
   };
 
   return (
-    <section id="negozio" className="py-24 md:py-32 bg-[#0A0B0D] text-[#F5F2ED] relative border-t border-white/5 scroll-mt-20">
+    <section id="negozio" className="py-24 md:py-32 bg-[#0A0B0D] text-[#F5F2ED] relative border-t border-white/5 scroll-mt-20 overflow-hidden w-full">
       {/* Anchor retrocompatibile */}
       <span id="store" className="absolute -top-24" />
 
@@ -82,7 +82,7 @@ export const StoreSection: React.FC<StoreSectionProps> = ({ onOpenInquiry }) => 
       <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
         {/* Intestazione Sezione */}
         <div className="text-center max-w-3xl mx-auto mb-14">

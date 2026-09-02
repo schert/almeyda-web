@@ -66,12 +66,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenReservation })
   return (
     <section 
       id="chi-siamo" 
-      className="py-24 md:py-32 bg-[#0C0E11] text-[#F5F2ED] relative border-t border-white/5 scroll-mt-20 overflow-hidden"
+      className="py-24 md:py-32 bg-[#0C0E11] text-[#F5F2ED] relative border-t border-white/5 scroll-mt-20 overflow-hidden w-full"
     >
       {/* Anchor per retrocompatibilità #about */}
       <span id="about" className="absolute -top-24" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
         {/* ================================================================= */}
         {/* 1. INTESTAZIONE SEZIONE */}

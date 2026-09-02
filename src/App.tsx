@@ -41,11 +41,11 @@ function MainApp() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0B0D] text-[#F5F2ED] selection:bg-[#D4AF37]/30 selection:text-[#F5F2ED] relative font-sans">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#0A0B0D] text-[#F5F2ED] selection:bg-[#D4AF37]/30 selection:text-[#F5F2ED] relative font-sans">
       {/* Barra di Navigazione Superiore */}
       <Navbar onOpenReservation={() => handleScrollToContact('tavolo')} />
 
-      <main id="main-content">
+      <main id="main-content" className="w-full max-w-full overflow-x-hidden">
         {/* 1. Sezione Home */}
         <Hero
           onOpenReservation={() => handleScrollToContact('tavolo')}

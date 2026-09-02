@@ -55,12 +55,12 @@ export const ArtSpaceSection: React.FC<ArtSpaceSectionProps> = ({ onOpenArtInqui
   );
 
   return (
-    <section id="spazio-arte" className="py-24 md:py-32 bg-[#0C0E12] text-[#F5F2ED] relative border-t border-white/5 overflow-hidden">
+    <section id="spazio-arte" className="py-24 md:py-32 bg-[#0C0E12] text-[#F5F2ED] relative border-t border-white/5 overflow-hidden w-full">
       {/* Elementi decorativi di sfondo */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
         {/* Intestazione Sezione */}
         <div className="text-center max-w-3xl mx-auto mb-16">

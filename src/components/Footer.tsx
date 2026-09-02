@@ -42,8 +42,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenReservation }) => {
   ];
 
   return (
-    <footer className="bg-[#07080A] text-[#F5F2ED] border-t border-white/10 pt-20 pb-12">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <footer className="bg-[#07080A] text-[#F5F2ED] border-t border-white/10 pt-20 pb-12 overflow-hidden w-full">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Griglia Principale Footer */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/5">
           {/* Brand & Manifesto */}
