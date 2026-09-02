@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useTranslation } from '../context/LanguageContext';
-import { Palette, Music, ShieldCheck, Coffee, Users, Sparkles, MessageCircle, ArrowRight, HeartHandshake } from 'lucide-react';
+import { Palette, Music, ShieldCheck, Coffee, Users, Sparkles, MessageCircle, ArrowRight, HeartHandshake, ZoomIn } from 'lucide-react';
 import { businessConfig } from '../config/almeydaConfig';
+import { useLightbox } from '../context/LightboxContext';
+import { LightboxImage } from '../types';
 
 interface ArtSpaceSectionProps {
   onOpenArtInquiry?: () => void;
@@ -10,6 +12,17 @@ interface ArtSpaceSectionProps {
 
 export const ArtSpaceSection: React.FC<ArtSpaceSectionProps> = ({ onOpenArtInquiry }) => {
   const { t } = useTranslation();
+  const { openLightbox } = useLightbox();
+
+  const artLightboxImages: LightboxImage[] = [
+    {
+      url: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop",
+      title: "Spazio all'Arte — Almeyda & Teatro Comunale",
+      caption: "Uno spazio monumentale aperto alla musica, alle parole, alle mostre d'arte e all'incontro umano nel cuore di Ortigia.",
+      category: "Spazio all'Arte",
+      alt: "Musica, arte e accoglienza al Teatro",
+    }
+  ];
 
   const getIcon = (name: string) => {
     switch (name) {
@@ -110,20 +123,30 @@ export const ArtSpaceSection: React.FC<ArtSpaceSectionProps> = ({ onOpenArtInqui
           </div>
 
           <div className="lg:col-span-6 relative">
-            <div className="relative aspect-4/3 overflow-hidden border border-[#D4AF37]/30 shadow-2xl group">
+            <div 
+              id="art-space-photo-card"
+              onClick={() => openLightbox(artLightboxImages, 0)}
+              className="relative aspect-4/3 overflow-hidden border border-[#D4AF37]/30 shadow-2xl group cursor-pointer"
+              title="Clicca per aprire la foto a tutto schermo"
+            >
               <img
                 src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop"
                 alt="Musica, arte e accoglienza al Teatro"
-                className="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover filter brightness-[0.98] group-hover:scale-105 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 bg-[#0A0B0D]/85 backdrop-blur-md border border-white/10">
-                <p className="text-[11px] text-[#D4AF37] uppercase tracking-[0.2em] font-semibold mb-1">
+
+              {/* Gradiente scuro e stile testo coerente con tutte le foto */}
+              <div className="absolute inset-x-0 bottom-0 pt-12 pb-3.5 px-3.5 sm:pb-4 sm:px-4 bg-gradient-to-t from-black/95 via-black/75 to-transparent flex flex-col justify-end z-10">
+                <p className="text-white text-xs sm:text-sm font-serif font-medium mb-0.5">
                   Teatro Comunale di Siracusa
                 </p>
-                <p className="text-sm font-serif text-white">
+                <p className="text-white/80 text-[10px] sm:text-[11px] line-clamp-1 font-light mb-1.5">
                   Uno spazio aperto alla musica, alle parole e all'incontro umano.
                 </p>
+                <span className="inline-flex items-center space-x-1.5 text-[9px] sm:text-[10px] text-[#D4AF37] tracking-wider uppercase font-mono font-medium">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Clicca per ingrandire</span>
+                </span>
               </div>
             </div>
           </div>

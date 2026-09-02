@@ -5,6 +5,8 @@
 
 import React from 'react';
 import { LanguageProvider } from './context/LanguageContext';
+import { LightboxProvider } from './context/LightboxContext';
+import { LightboxModal } from './components/LightboxModal';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { UnifiedCartaSection } from './components/UnifiedCartaSection';
@@ -71,6 +73,9 @@ function MainApp() {
 
       {/* Footer */}
       <Footer onOpenReservation={handleScrollToContact} />
+
+      {/* Visualizzatore Immagini a Tutto Schermo (Lightbox Modal) */}
+      <LightboxModal />
     </div>
   );
 }
@@ -78,7 +83,9 @@ function MainApp() {
 export default function App() {
   return (
     <LanguageProvider>
-      <MainApp />
+      <LightboxProvider>
+        <MainApp />
+      </LightboxProvider>
     </LanguageProvider>
   );
 }

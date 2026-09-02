@@ -30,6 +30,14 @@ export interface GalleryItem {
   caption?: string;
 }
 
+export interface LightboxImage {
+  url: string;
+  title?: string;
+  caption?: string;
+  category?: string;
+  alt?: string;
+}
+
 export interface BusinessConfig {
   businessName: string;
   tagline: string;

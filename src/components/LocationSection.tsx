@@ -1,12 +1,33 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useTranslation } from '../context/LanguageContext';
-import { MapPin, Clock, Navigation, Landmark } from 'lucide-react';
+import { MapPin, Clock, Navigation, Landmark, ZoomIn } from 'lucide-react';
 import { businessConfig } from '../config/almeydaConfig';
 import { getAssetUrl } from '../utils/assetUrl';
+import { useLightbox } from '../context/LightboxContext';
+import { LightboxImage } from '../types';
 
 export const LocationSection: React.FC = () => {
   const { t } = useTranslation();
+  const { openLightbox } = useLightbox();
+
+  // Collezione completa immagini per il visualizzatore a tutto schermo
+  const locationLightboxImages: LightboxImage[] = [
+    {
+      url: getAssetUrl('images/teatro-comunale-siracusa-interno.jpg'),
+      title: "Teatro Comunale di Siracusa — Sala Storica",
+      caption: "La magnifica sala storica all'italiana: volta affrescata da Gustavo Mancinelli con il rosone centrale e i tre ordini di palchi in velluto rosso.",
+      category: "Teatro Comunale",
+      alt: "Interno del Teatro Comunale di Siracusa - Volta affrescata e Palchetti",
+    },
+    ...t.locationSection.gallery.map((img) => ({
+      url: img.imageUrl,
+      title: img.title,
+      caption: img.caption,
+      category: "Ortigia & Location",
+      alt: img.title,
+    })),
+  ];
 
   return (
     <section id="ambientazione" className="py-24 md:py-32 bg-[#0A0B0D] text-[#F5F2ED] relative border-t border-white/5 scroll-mt-20">
@@ -54,17 +75,33 @@ export const LocationSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative aspect-16/10 rounded-sm overflow-hidden border border-white/10 group shadow-lg">
+            <div 
+              id="teatro-siracusa-photo-card"
+              onClick={() => openLightbox(locationLightboxImages, 0)}
+              className="lg:col-span-5 relative aspect-16/10 rounded-sm overflow-hidden border border-white/15 group shadow-xl cursor-pointer"
+              title="Clicca per aprire la foto a tutto schermo"
+            >
               <img
                 src={getAssetUrl('images/teatro-comunale-siracusa-interno.jpg')}
                 alt="Interno del Teatro Comunale di Siracusa - Volta affrescata e Palchetti"
-                className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover filter brightness-[0.98] group-hover:scale-105 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B0D]/70 via-transparent to-transparent pointer-events-none" />
-              <span className="absolute bottom-2.5 right-3 text-[9px] uppercase tracking-wider text-[#D4AF37] bg-black/60 backdrop-blur-xs px-2 py-0.5 border border-[#D4AF37]/30">
+              
+              {/* Badge Sala Storica senza logo */}
+              <span className="absolute top-3 right-3 text-[9px] uppercase tracking-wider text-[#D4AF37] bg-black/80 backdrop-blur-xs px-2.5 py-1 border border-[#D4AF37]/40 font-semibold z-10 shadow-md">
                 Sala Storica
               </span>
+
+              {/* Soluzione 1: Gradiente scuro limitato unicamente alla zona testo inferiore */}
+              <div className="absolute inset-x-0 bottom-0 pt-12 pb-3.5 px-3.5 sm:pb-4 sm:px-4 bg-gradient-to-t from-black/95 via-black/75 to-transparent flex flex-col justify-end z-10">
+                <p className="text-white text-xs sm:text-sm font-serif font-medium mb-0.5">Teatro Comunale di Siracusa</p>
+                <p className="text-white/80 text-[10px] sm:text-[11px] line-clamp-1 font-light mb-1.5">Volta affrescata da Gustavo Mancinelli e palchi storici</p>
+                <span className="inline-flex items-center space-x-1.5 text-[9px] sm:text-[10px] text-[#D4AF37] tracking-wider uppercase font-mono font-medium">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  <span>Clicca per ingrandire</span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -78,17 +115,24 @@ export const LocationSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative aspect-4/3 overflow-hidden bg-black border border-white/10"
+              onClick={() => openLightbox(locationLightboxImages, i + 1)}
+              className="group relative aspect-4/3 overflow-hidden bg-black border border-white/10 hover:border-[#D4AF37]/50 transition-all duration-300 cursor-pointer"
+              title={`${img.title} — Clicca per aprire a tutto schermo`}
             >
               <img
                 src={img.imageUrl}
                 alt={img.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                <p className="text-white text-xs font-serif font-medium">{img.title}</p>
-                <p className="text-white/60 text-[10px]">{img.caption}</p>
+              {/* Soluzione 1: gradiente che copre solo l'area testo in basso */}
+              <div className="absolute inset-x-0 bottom-0 pt-10 pb-3.5 px-3.5 sm:pb-4 sm:px-4 bg-gradient-to-t from-black/95 via-black/75 to-transparent flex flex-col justify-end">
+                <p className="text-white text-xs font-serif font-medium mb-0.5">{img.title}</p>
+                <p className="text-white/80 text-[10px] line-clamp-2 mb-1.5 leading-snug">{img.caption}</p>
+                <span className="inline-flex items-center space-x-1.5 text-[9px] text-[#D4AF37] tracking-wider uppercase font-mono font-medium">
+                  <ZoomIn className="w-3 h-3 text-[#D4AF37]" />
+                  <span>Clicca per ingrandire</span>
+                </span>
               </div>
             </motion.div>
           ))}
