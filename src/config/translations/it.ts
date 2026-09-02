@@ -644,22 +644,22 @@ export const itTranslations: TranslationDictionary = {
     ]
   },
   contattaciSection: {
-    badge: "Siamo a Tua Disposizione",
+    badge: "Prenotazioni & Contatto via WhatsApp",
     title: "Contattaci",
-    subtitle: "Prenota il tuo tavolo o richiedi informazioni per il tuo evento.",
+    subtitle: "Interazione diretta su WhatsApp: seleziona i dettagli della richiesta e invia il messaggio già precompilato al nostro staff.",
     addressLabel: "Indirizzo",
     phoneLabel: "Telefono",
     whatsappLabel: "WhatsApp Diretto",
     emailLabel: "Posta Elettronica",
     hoursLabel: "Orari di Apertura",
     form: {
-      title: "Invia una Richiesta",
-      subtitle: "Compila il modulo sottostante, il nostro personale ti risponderà con tempestività.",
+      title: "Componi Richiesta",
+      subtitle: "Inserisci i tuoi dettagli: cliccando sul pulsante si aprirà direttamente WhatsApp con il testo già formattato in ogni dettaglio.",
       nameLabel: "Nome e Cognome",
       namePlaceholder: "Mario Rossi",
-      phoneLabel: "Numero di Telefono",
+      phoneLabel: "Numero di Telefono (Facoltativo)",
       phonePlaceholder: "+39 333 1234567",
-      emailLabel: "Indirizzo Email",
+      emailLabel: "Indirizzo Email (Facoltativo)",
       emailPlaceholder: "mario.rossi@email.it",
       subjectLabel: "Oggetto della Richiesta",
       subjectOptions: {
@@ -673,16 +673,11 @@ export const itTranslations: TranslationDictionary = {
       dateLabel: "Data Desiderata",
       timeLabel: "Orario Indicativo",
       guestsLabel: "Numero di Persone",
-      messageLabel: "Messaggio o Richieste Particolari",
-      messagePlaceholder: "Segnala eventuali intolleranze, preferenze di tavolo o dettagli dell'evento...",
-      submitBtn: "Invia Richiesta"
-    },
-    confirmation: {
-      title: "Richiesta Inviata con Successo",
-      message: "Grazie. Abbiamo registrato la tua richiesta. Ti ricontatteremo a breve per confermare la disponibilità.",
-      whatsappBtn: "Scrivici su WhatsApp per Risposta Immediata",
-      callBtn: "Chiama Direttamente",
-      newRequestBtn: "Invia un'Altra Richiesta"
+      messageLabel: "Messaggio o Note Particolari",
+      messagePlaceholder: "Segnala intolleranze, preferenze di tavolo, richieste o dettagli...",
+      submitBtn: "Invia Richiesta su WhatsApp",
+      previewLabel: "Anteprima Messaggio WhatsApp Precompilato",
+      whatsappNotice: "Nessuna attesa o modulo da registrare: verrai reindirizzato direttamente alla chat WhatsApp ufficiale di Almeyda per la conferma immediata."
     }
   },
   footer: {

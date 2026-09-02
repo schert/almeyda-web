@@ -276,8 +276,10 @@ export interface TranslationDictionary {
       messageLabel: string;
       messagePlaceholder: string;
       submitBtn: string;
+      previewLabel: string;
+      whatsappNotice: string;
     };
-    confirmation: {
+    confirmation?: {
       title: string;
       message: string;
       whatsappBtn: string;

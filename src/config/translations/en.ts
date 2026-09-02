@@ -644,22 +644,22 @@ export const enTranslations: TranslationDictionary = {
     ]
   },
   contattaciSection: {
-    badge: "We Are at Your Service",
+    badge: "Reservations & Contact via WhatsApp",
     title: "Contact Us",
-    subtitle: "Reserve your table or plan your private event with us.",
+    subtitle: "Direct WhatsApp interaction: select request details and send a ready-to-send precompiled message to our team.",
     addressLabel: "Address",
     phoneLabel: "Phone",
     whatsappLabel: "Direct WhatsApp",
     emailLabel: "Email Address",
     hoursLabel: "Opening Hours",
     form: {
-      title: "Send an Inquiry",
-      subtitle: "Complete the form below and our hospitality team will respond promptly.",
+      title: "Compose Inquiry",
+      subtitle: "Enter your details: clicking the button will open WhatsApp directly with the message pre-filled in every detail.",
       nameLabel: "Full Name",
       namePlaceholder: "John Smith",
-      phoneLabel: "Phone Number",
+      phoneLabel: "Phone Number (Optional)",
       phonePlaceholder: "+39 333 1234567",
-      emailLabel: "Email Address",
+      emailLabel: "Email Address (Optional)",
       emailPlaceholder: "john.smith@email.com",
       subjectLabel: "Inquiry Type",
       subjectOptions: {
@@ -673,16 +673,11 @@ export const enTranslations: TranslationDictionary = {
       dateLabel: "Preferred Date",
       timeLabel: "Preferred Time",
       guestsLabel: "Number of Guests",
-      messageLabel: "Special Notes or Requests",
-      messagePlaceholder: "Mention dietary needs, seating preferences or event details...",
-      submitBtn: "Send Inquiry"
-    },
-    confirmation: {
-      title: "Inquiry Sent Successfully",
-      message: "Thank you. We have received your request and will contact you shortly to confirm availability.",
-      whatsappBtn: "Message Us on WhatsApp for Instant Reply",
-      callBtn: "Call Directly",
-      newRequestBtn: "Send Another Inquiry"
+      messageLabel: "Special Notes or Details",
+      messagePlaceholder: "Mention dietary needs, seating preferences or custom requests...",
+      submitBtn: "Send Inquiry via WhatsApp",
+      previewLabel: "Pre-filled WhatsApp Message Preview",
+      whatsappNotice: "No waiting or form processing: you will be directed directly to Almeyda's official WhatsApp chat for instant confirmation."
     }
   },
   footer: {
